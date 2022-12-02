@@ -84,6 +84,8 @@ td {
   position: fixed;
   bottom: 0;
   right: 0;
+  height: 150px;
+  width: 150px;
 }
 
 #heart4 {
