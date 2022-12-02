@@ -1,6 +1,9 @@
 h1 {
   text-align: center;
-  font-size: 100px;
+  font-size: 45px;
+  color: darkgreen;
+  text-shadow: 50px;
+  font-family: cursive;
 }
 
 #popup {
@@ -20,9 +23,6 @@ body {
 }
 
 h1 {
-  color: darkgreen;
-  text-shadow: 20px;
-  font-family: cursive;
 }
 
 h2 {
