@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <audio autoplay loop>
+    <audio id="audioID" autoplay loop>
         <source src="Careless Air Horn.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
@@ -58,6 +58,10 @@
     <script>
         var x = document.getElementById("myAudio");
         x.play();
+    </script>
+
+    <script>
+        var myaudio = document.getElementById("audioID").autoplay = true;
     </script>
 
     <script>
