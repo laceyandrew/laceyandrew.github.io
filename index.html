@@ -24,7 +24,7 @@
 <body>
     <div id="popup">
         Only enter if you are Suzette!
-        <form onclick="audioID.autoplay">
+        <form onclick="hide()">
             <input type="submit" value="I am Suzette">
         </form>
     </div>
@@ -80,6 +80,17 @@
     <script>
         function clicked() {
             alert("I love you too sugar plum")
+        }
+    </script>
+
+    <script>
+        function hide() {
+            var x = document.getElementById("popup");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
         }
     </script>
 </body>
