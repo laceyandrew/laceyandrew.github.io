@@ -113,6 +113,12 @@ td {
   margin-left: -100px;
 }
 
+#button {
+  border: 10px;
+  border-color: blue;
+  color: red;
+}
+
 input {
   font-family: cursive;
 }
