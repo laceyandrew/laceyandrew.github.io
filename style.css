@@ -1,0 +1,100 @@
+h1 {
+  text-align: center;
+}
+
+body {
+  background: url("tyler\ after2.jpg") no-repeat center center fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  color: darkgreen;
+  text-shadow: 100px;
+  font-family: cursive;
+}
+
+h2 {
+  color: indianred;
+  text-decoration: dotted;
+  text-shadow: 100px;
+  font-family: cursive;
+}
+
+ul {
+  font-size: larger;
+  color: darkgreen;
+  text-shadow: 100px;
+  font-family: cursive;
+}
+
+li {
+  font-size: larger;
+  text-shadow: 100px;
+  font-family: cursive;
+}
+
+table {
+  border-color: aqua;
+  border-width: 20px;
+  font-family: cursive;
+  text-align: center;
+}
+
+th,
+td {
+  font-family: cursive;
+  color: indigo;
+  text-decoration: wavy;
+  background-color: royalblue;
+  display: table-cell;
+  vertical-align: top;
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  max-width: 100%;
+  white-space: nowrap;
+}
+
+#heart1 {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 200px;
+  height: 200px;
+}
+
+#heart2 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 150;
+  width: 150;
+}
+
+#heart3 {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+#heart4 {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  font-size: 18px;
+  width: 200px;
+  height: 90px;
+}
+
+#star {
+  position: absolute;
+  top: 50%;
+  left: 64%;
+  width: 100px;
+  height: 100px;
+}
+
+input {
+  font-family: cursive;
+}
