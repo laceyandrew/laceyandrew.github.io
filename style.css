@@ -105,6 +105,12 @@ td {
   height: 100px;
 }
 
+#confirm {
+  position: fixed; /* or absolute */
+  top: 50%;
+  left: 50%;
+}
+
 input {
   font-family: cursive;
 }
