@@ -6,11 +6,6 @@ h1 {
   text-shadow: 3px 3px gold;
 }
 
-img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
 
 #popup {
   position: fixed;
