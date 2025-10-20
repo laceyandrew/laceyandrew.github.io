@@ -6,6 +6,11 @@ h1 {
   text-shadow: 3px 3px gold;
 }
 
+img {
+  max-width: 100%;
+  height: auto; /* Maintains aspect ratio */
+}
+
 #popup {
   position: fixed;
   width: 100%;
