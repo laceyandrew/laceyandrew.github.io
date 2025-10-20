@@ -70,24 +70,24 @@ td {
   position: absolute;
   top: 0px;
   right: 0px;
-  width: 200px;
-  height: 200px;
+  width: 15%;
+  height: 15%;
 }
 
 #heart2 {
   position: absolute;
   left: 0px;
   bottom: 0px;
-  height: 130px;
-  width: 130px;
+  width: 15%;
+  height: 15%;
 }
 
 #heart3 {
   position: fixed;
   bottom: 0;
   right: 0;
-  height: 150px;
-  width: 150px;
+  width: 15%;
+  height: 15%;
 }
 
 #heart4 {
@@ -95,8 +95,8 @@ td {
   top: 8px;
   left: 16px;
   font-size: 18px;
-  width: 200px;
-  height: 90px;
+  width: 15%;
+  height: 15%;
 }
 
 #star {
@@ -124,4 +124,7 @@ td {
 
 input {
   font-family: cursive;
+}
+h1{
+  font-size: 4vw;
 }
