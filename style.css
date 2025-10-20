@@ -7,6 +7,12 @@ h1 {
   
 }
 
+.content{
+  width: 200px;
+  height: 100px;
+  border: 2px solid blue; /* Sets a 2px solid blue border */
+  padding: 10px;
+}
 
 #popup {
   position: fixed;
