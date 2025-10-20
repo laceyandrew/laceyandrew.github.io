@@ -7,11 +7,6 @@ h1 {
   
 }
 
-#content{
-  width: 20%;
-  height: 20%;
-  padding: 10px;
-}
 
 #popup {
   position: fixed;
