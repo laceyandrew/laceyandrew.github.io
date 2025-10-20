@@ -8,9 +8,8 @@ h1 {
 }
 
 #content{
-  width: 200px;
-  height: 100px;
-  border: 2px solid blue; /* Sets a 2px solid blue border */
+  width: 20%;
+  height: 20%;
   padding: 10px;
 }
 
