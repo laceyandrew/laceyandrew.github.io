@@ -17,6 +17,9 @@ body {
 /* Position H1 at the top of the screen */
 h1 {
     position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 1001; /* Higher than hearts/star */
     text-align: center; /* Always centered */
     font-size: 5vw;
@@ -24,7 +27,7 @@ h1 {
     font-family: cursive;
     text-shadow: 3px 3px gold;
     padding: 10px; /* Added padding */
-    background-color: rgba(255, 255, 255, 0.85); /* Background for readability */
+    /* background-color removed - h1 is now transparent */
 }
 
 #main-container {
@@ -174,7 +177,7 @@ input {
 
 /* --- Media Queries for Readability Bounds --- */
 @media (min-width: 768px) {
-    h1 { font-size: 36px; padding: 15px; } /* Adjust padding for desktop */
+    h1 { font-size: 36px; padding: 15px; } 
     h2 { font-size: 24px; }
     ul, li, th, td, table { font-size: 18px; }
     #button { font-size: 24px; }
