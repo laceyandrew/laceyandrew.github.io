@@ -1,13 +1,19 @@
 /* --- General Mobile-Friendly Resets & Fluid Typography --- */
 body {
     font-family: sans-serif;
-    background: url("tyler after2.jpg") no-repeat center center fixed; <-- Add your background image here if needed */
+    background: url("tyler after2.jpg") no-repeat center center fixed; 
     background-size: cover;
     background-repeat: no-repeat;
     margin: 0;
     padding: 0;
     text-align: left; /* Default alignment changed to left */
     color: #333;
+    /* Use flexbox for vertical alignment of content within viewport */
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Make body height 100% of viewport height */
+    justify-content: center; /* Center content vertically */
+    align-items: flex-start; /* Align content to the left */
 }
 
 /* --- Popup Styling --- */
@@ -44,23 +50,23 @@ body {
 
 button {
     padding: 10px 20px;
-    /* Original button colors restored */
     background-color: transparent; 
     color: red; 
-    border: 10px; /* Original width - likely meant for border-width property */
-    border-color: blue; /* Original color */
+    border: 10px; 
+    border-color: blue; 
     cursor: pointer;
-    font-size: xx-large; /* Original size */
-    font-family: cursive; /* Original font */
+    font-size: xx-large; 
+    font-family: cursive; 
     margin-top: 10px;
 }
 
-/* --- Rest of the page styling (for context) --- */
-h1, h2 { color: #ff007f; text-align: left; }
+/* --- H1 Positioning --- */
+/* The main H1 is no longer fixed to the top, it flows with content */
 h1 {
     color: #ff0000;
     font-family: cursive;
     text-shadow: 3px 3px gold;
+    margin-left: 20px; /* Add margin to stay right of the heart */
 }
 h2 {
     color: indianred; /* Original color */
@@ -69,24 +75,28 @@ h2 {
     font-family: cursive;
 }
 
+/* --- Content Area Positioning --- */
 #content { 
     padding: 20px; 
-    margin: 15px; 
+    margin: 15px 0 15px 20px; /* Add left margin to stay right of heart */
     background: white; 
     border-radius: 8px; 
     text-align: left;
+    /* Constrain content height to fit between hearts */
+    max-height: calc(100vh - 24vw - 40px); 
+    overflow-y: auto; /* Add scroll if content exceeds space */
 }
 ul { 
     list-style-position: inside; 
     padding: 0; 
     text-align: left;
     margin-bottom: 0;
-    color: darkgreen; /* Original color */
-    text-shadow: 2px 2px plum; /* Original color */
+    color: darkgreen; 
+    text-shadow: 2px 2px plum; 
 }
 li {
-    color: darkgreen; /* Original color */
-    text-shadow: 2px 2px plum; /* Original color */
+    color: darkgreen; 
+    text-shadow: 2px 2px plum; 
     font-family: cursive;
 }
 
@@ -98,18 +108,18 @@ table {
     text-align: left; 
     margin-left: 0;
     margin-right: auto;
-    border-color: aqua; /* Original color */
-    border-width: 20px; /* Original width - note this is very large */
+    border-color: aqua; 
+    border-width: 20px; 
 }
 th, td { 
     border: 1px solid #ddd; 
     padding: 8px; 
     text-align: left; 
-    text-shadow: 2px 2px #ff0000; /* Original color */
+    text-shadow: 2px 2px #ff0000; 
     font-family: cursive;
-    color: indigo; /* Original color */
+    color: indigo; 
     text-decoration: wavy;
-    background-color: royalblue; /* Original color */
+    background-color: royalblue; 
 }
 
 /* --- Form and Button Alignment --- */
@@ -120,7 +130,15 @@ form {
 
 img { max-width: 100%; height: auto; margin: 5px 0; }
 .corner-heart { position: fixed; width: 12vw; z-index: 999; }
+
+/* heart1 at top left of screen (defines top boundary for content) */
 #heart-top-left { top: 10px; left: 10px; }
+
+/* heart2 at top right of screen */
 #heart-top-right { top: 10px; right: 10px; }
+
+/* heart3 at bottom left of screen (defines bottom boundary for content) */
 #heart-bottom-left { bottom: 10px; left: 10px; }
+
+/* heart4 at bottom right of screen */
 #heart-bottom-right { bottom: 10px; right: 10px; }
