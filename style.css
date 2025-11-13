@@ -1,140 +1,175 @@
-h1 {
-  text-align: center;
-  font-size: 5vw;
-  color: #ff0000;
-  font-family: cursive;
-  text-shadow: 3px 3px gold;
-  
-}
-
-
-#popup {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0px;
-  left: 0px;
-  z-index: 1000;
-  background-color: white;
-  
-}
-
+/* --- General Mobile-Friendly Resets & Fluid Typography --- */
 body {
-  background: url("tyler after2.jpg") no-repeat center center fixed;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
+    background: url("tyler after2.jpg") no-repeat center center fixed;
+    /* Changed background-size to cover for better mobile image display */
+    background-size: cover; 
+    background-repeat: no-repeat;
+    /* Added text color for general body text (like the input field and list items) */
+    color: #333; 
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    font-size: 5vw; /* Fluid font size */
+    color: #ff0000;
+    font-family: cursive;
+    text-shadow: 3px 3px gold;
 }
 
 h2 {
-  color: indianred;
-  text-decoration: dotted;
-  text-shadow: 3px 3px aquamarine;
-  font-family: cursive;
-  font-size: 4vw;
+    color: indianred;
+    text-decoration: dotted;
+    text-shadow: 3px 3px aquamarine;
+    font-family: cursive;
+    font-size: 4vw; /* Fluid font size */
 }
 
-ul {
-  font-size: larger;
-  color: darkgreen;
-  text-shadow: 3px 3px plum;
-  font-family: cursive;
-  font-size: 3vw;
+ul, li {
+    font-family: cursive;
+    color: darkgreen;
+    text-shadow: 2px 2px plum;
+    font-size: 3vw; /* Fluid font size */
+    list-style-position: inside; /* Keeps bullets inside the content area */
+    padding: 0;
 }
 
-li {
-  font-size: larger;
-  font-family: cursive;
-  text-shadow: 2px 2px plum;
-  font-size: 3vw;
+/* Ensure content is readable by adding a background to the main content area */
+#content {
+    padding: 15px;
+    margin: 15px;
+    background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent white background */
+    border-radius: 10px;
 }
 
+/* --- Table Responsiveness --- */
+/* Wrap table in a div if needed for horizontal scroll, but simplified here */
 table {
-  border-color: aqua;
-  border-width: 20px;
-  font-family: cursive;
-  text-align: center;
-  font-size: 2vw;
+    border-collapse: collapse; /* Cleaner table look */
+    border-color: aqua; /* Note: border-color on table tag is deprecated, use border on th/td */
+    border-width: 20px;
+    font-family: cursive;
+    text-align: center;
+    width: 100%; /* Ensure table spans full width */
+    font-size: 3vw; /* Fluid font size */
+    margin: auto;
 }
 
-th,
-td {
-  text-shadow: 2px 2px #ff0000;
-  font-family: cursive;
-  color: indigo;
-  text-decoration: wavy;
-  background-color: royalblue;
-  display: table-cell;
-  vertical-align: top;
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-  max-width: 100%;
-  white-space: nowrap;
-  font-size: 2vw;
+th, td {
+    text-shadow: 2px 2px #ff0000;
+    font-family: cursive;
+    color: indigo;
+    /* text-decoration: wavy; is often hard to read, removed/kept based on preference */
+    background-color: royalblue;
+    /* display: table-cell; is default */
+    vertical-align: top;
+    border: 1px solid #dddddd;
+    text-align: center; /* Changed from left to center for better mobile alignment */
+    padding: 8px;
+    max-width: 100%;
+    /* Removed white-space: nowrap to allow text to wrap on mobile */
+    word-wrap: break-word; 
+    font-size: 3vw; /* Fluid font size */
 }
 
-#heart1 {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  width: 15%;
-  height: 15%;
-}
-
-#heart2 {
-  position: absolute;
-  left: 0px;
-  bottom: 0px;
-  width: 15%;
-  height: 15%;
-}
-
-#heart3 {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  width: 15%;
-  height: 15%;
-}
-
-#heart4 {
-  position: absolute;
-  top: 8px;
-  left: 16px;
-  font-size: 18px;
-  width: 15%;
-  height: 15%;
-}
-
-#star {
-  position: absolute;
-  top: 50%;
-  left: 64%;
-  width: 100px;
-  height: 100px;
+/* --- Modal/Popup Styling --- */
+#popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+    /* Use flexbox to center #confirm div */
+    display: flex; 
+    justify-content: center;
+    align-items: center;
 }
 
 #confirm {
-  margin: auto;
-  width: 50%;
-  border: 3px solid green;
-  padding: 10px;
+    /* Removed margin: auto and width: 50% for mobile centering */
+    width: 80%; /* Takes up 80% of the screen width */
+    max-width: 400px; /* Max size for desktop views */
+    border: 3px solid green;
+    padding: 20px;
+    background-color: white; /* Ensure background to contrast popup background */
+    border-radius: 10px;
 }
 
+/* --- Button and Input Styling --- */
 #button {
-  border: 10px;
-  border-color: blue;
-  color: red;
-  font-family: cursive;
-  font-size: xx-large;
+    /* border: 10px; is shorthand, use border-width: 10px; if needed */
+    border-width: 5px; 
+    border-style: solid;
+    border-color: blue;
+    color: red;
+    font-family: cursive;
+    font-size: 4vw; /* Fluid font size */
+    padding: 10px 20px; /* Add padding for easy tapping */
 }
 
 input {
-  font-family: cursive;
+    font-family: cursive;
+    width: 80%;
+    padding: 10px;
+    margin-top: 10px;
 }
-h1{
-  font-size: 4vw;
+
+/* --- Fixed Positioned Images (Hearts/Star) --- */
+/* Unified styling for absolute/fixed elements */
+#heart1, #heart2, #heart3, #heart4, #star {
+    position: fixed; /* Use fixed positioning for consistency across all corner elements */
+    width: 15vw; /* Use viewport units for responsive sizing */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 999;
 }
-h1{
-  font-size: 3vw;
+
+#heart1 {
+    top: 10px;
+    right: 10px;
+    width: 12vw; /* Slightly smaller to fit better */
+}
+
+#heart2 {
+    left: 10px;
+    bottom: 10px;
+    width: 12vw;
+}
+
+#heart3 {
+    bottom: 10px;
+    right: 10px;
+    width: 12vw;
+}
+
+#heart4 {
+    top: 10px;
+    left: 10px;
+    width: 12vw;
+}
+
+#star {
+    top: 50%;
+    left: 50%; /* Center the star */
+    transform: translate(-50%, -50%); /* Precisely center the element */
+    width: 20vw; /* Responsive width */
+    max-width: 100px; /* Max size */
+}
+
+
+/* --- Media Queries for Readability Bounds --- */
+/* Cap text sizes on large screens */
+@media (min-width: 768px) {
+    h1 { font-size: 36px; }
+    h2 { font-size: 24px; }
+    ul, li, th, td, table { font-size: 18px; }
+    #button { font-size: 24px; }
+}
+
+/* Ensure minimum text size on very small screens */
+@media (max-width: 320px) {
+     h1 { font-size: 6vw; } /* Ensure it still scales down if needed */
+     th, td { font-size: 3.5vw; }
 }
