@@ -5,11 +5,10 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     margin: 0;
-    padding: 0;
-    text-align: left; /* Left justified */
-    color: #333;
     /* Add padding to the body to prevent overlap with fixed corner hearts */
     padding: 15vw;
+    text-align: left; /* Left justified */
+    color: #333;
     display: flex;
 }
 
@@ -135,32 +134,24 @@ input {
 #heart1 {
     top: 10px;
     left: 10px;
-    right: auto;
-    bottom: auto;
 }
 
 /* heart2 at top right of screen */
 #heart2 {
     top: 10px;
     right: 10px;
-    left: auto;
-    bottom: auto;
 }
 
 /* heart3 at bottom left of screen */
 #heart3 {
     bottom: 10px;
     left: 10px;
-    top: auto;
-    right: auto;
 }
 
 /* heart4 at bottom right of screen */
 #heart4 {
     bottom: 10px;
     right: 10px;
-    top: auto;
-    left: auto;
 }
 
 #star {
