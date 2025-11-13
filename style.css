@@ -9,7 +9,6 @@ body {
     padding: 0;
     text-align: left; /* Left justified */
     color: #333;
-    /* Added top padding to prevent content from overlapping the fixed h1 */
     padding-top: 15vw; 
     background-color: #B3907A; 
 }
@@ -37,7 +36,6 @@ h1 {
     padding: 10px;
     box-sizing: border-box;
     background-color: rgba(255, 255, 255, 0.85);
-    /* Auto margins to center the container horizontally */
     margin: 0 auto; 
 }
 
@@ -72,6 +70,8 @@ table {
     font-family: cursive;
     text-align: left;
     width: 100%;
+    /* Max width set to 25% of viewport width */
+    max-width: 25vw; 
     font-size: 3vw;
     margin: auto;
 }
@@ -86,8 +86,8 @@ th, td {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
-    max-width: 100%;
-    word-wrap: break-word;
+    /* Added word-break for very narrow tables */
+    word-break: break-all;
     font-size: 3vw;
 }
 
@@ -182,6 +182,7 @@ input {
     ul, li, th, td, table { font-size: 18px; }
     #button { font-size: 24px; }
     .corner-heart { width: 90px; }
-    /* Adjust body padding for desktop (approx h1 height + original padding) */
     body { padding-top: 100px; } 
+    /* Max width set to 25% of viewport width on desktop too */
+    table { max-width: 250px; } 
 }
