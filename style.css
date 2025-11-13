@@ -9,20 +9,20 @@ body {
     padding: 0;
     text-align: left; /* Left justified */
     color: #333;
-    display: flex;
-    /* Changed to specified color #B3907A */
+    /* Removed display: flex; to allow normal document flow (vertical stacking) */
     background-color: #B3907A; 
 }
 
 #main-container {
-    width: calc(25% - 20px); 
+    /* Simplified width calculation */
+    width: 25%; 
     min-width: 200px;
     max-width: 400px;
     padding: 10px;
     box-sizing: border-box;
     background-color: rgba(255, 255, 255, 0.85);
-    /* Add margins to prevent overlap with fixed heart images */
-    margin: 15vw 10px 15vw 15vw; 
+    /* Use auto margins to center the container horizontally in the normal flow */
+    margin: 15vw auto;
 }
 
 h1 {
@@ -175,5 +175,5 @@ input {
     ul, li, th, td, table { font-size: 18px; }
     #button { font-size: 24px; }
     .corner-heart { width: 90px; }
-    #main-container { margin: 100px 10px 100px 100px; }
+    /* Removed media query for main-container margin as it's centered now */
 }
