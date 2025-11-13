@@ -10,10 +10,11 @@ body {
     text-align: left; /* Left justified */
     color: #333;
     display: flex;
+    /* Changed to specified color #B3907A */
+    background-color: #B3907A; 
 }
 
 #main-container {
-    /* Adjust width to be less than 25% to account for margins */
     width: calc(25% - 20px); 
     min-width: 200px;
     max-width: 400px;
