@@ -17,19 +17,53 @@
             padding: 0;
             text-align: center;
             color: #333;
+            /* Base font size for large screens, uses fluid scaling on mobile */
+            font-size: 16px; 
         }
 
-        /* Popup Modal Styling */
+        /* --- Fluid Typography --- */
+        /* H1 scales from 24px to ~40px depending on screen size */
+        h1 {
+            color: #ff007f;
+            font-size: 6vw; 
+            min-font-size: 24px; /* Ensure a minimum size */
+        }
+
+        /* H2 scales from 18px to ~28px */
+        h2 {
+            color: #ff007f;
+            font-size: 4.5vw;
+            min-font-size: 18px;
+        }
+
+        /* General text (li, td, p, button) */
+        #confirm h1 {
+             font-size: 5vw;
+        }
+        button, ul, table {
+            font-size: 3.5vw;
+        }
+
+        /* Media queries to cap the text size for desktop views */
+        @media (min-width: 600px) {
+            h1 { font-size: 36px; }
+            h2 { font-size: 24px; }
+            #confirm h1 { font-size: 28px; }
+            button, ul, table { font-size: 18px; }
+        }
+
+
+        /* --- Layout and Component Styling (Remains responsive) --- */
         #popup {
             display: none;
-            position: fixed; /* Fixed position for modal */
+            position: fixed;
             z-index: 1000;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.7);
-            display: flex; /* Use flexbox to center content */
+            display: flex;
             justify-content: center;
             align-items: center;
         }
@@ -40,8 +74,8 @@
             margin: 15px;
             border: 1px solid #888;
             border-radius: 10px;
-            width: 80%; /* Responsive width */
-            max-width: 400px; /* Max size for larger screens */
+            width: 80%;
+            max-width: 400px;
             box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
         }
 
@@ -52,17 +86,7 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 1em;
             margin-top: 10px;
-        }
-
-        button:hover {
-            opacity: 0.8;
-        }
-
-        /* Main Content Styling */
-        h1, h2 {
-            color: #ff007f;
         }
 
         #content {
@@ -78,11 +102,6 @@
             padding: 0;
         }
 
-        li {
-            margin-bottom: 5px;
-        }
-
-        /* Table Styling */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -95,24 +114,22 @@
             text-align: center;
         }
 
-        /* Responsive Image Styling */
         img {
-            max-width: 100%; /* Images scale down to fit container */
-            height: auto; /* Maintain aspect ratio */
+            max-width: 100%;
+            height: auto;
             margin: 5px 0;
         }
 
-        /* Use flexbox for image container to allow wrapping */
         .image-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px; /* Space between images */
+            gap: 10px;
             padding: 10px;
         }
 
         .image-container img {
-            max-width: 100px; /* Control size of individual small images */
+            max-width: 100px;
         }
     </style>
     
@@ -126,11 +143,9 @@
 <body>
 
     <script type="text/javascript">
-        // Ensure popup shows on load
         function show_popup() {
-            document.getElementById('popup').style.display = 'flex'; // Use flex for centering
+            document.getElementById('popup').style.display = 'flex';
         }
-
         window.onload = show_popup;
     </script>
     
@@ -173,7 +188,6 @@
         </form>
     </div>
 
-    <!-- Image Container -->
     <div class="image-container">
         <img id="heart1" src="Heart_dancing.gif" alt="Dancing heart 1">
         <img id="heart2" src="dancing-heart-021407.gif" alt="Dancing heart 2">
@@ -190,7 +204,6 @@
         function hide() {
             var audio = document.getElementById("audioID");
             document.getElementById("popup").style.display = "none";
-            // Set autoplay true just in case, but play() is more direct
             audio.autoplay = true; 
             audio.play();
         }
