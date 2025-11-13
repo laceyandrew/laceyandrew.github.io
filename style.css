@@ -1,162 +1,174 @@
+/* --- General Mobile-Friendly Resets & Fluid Typography --- */
+body {
+    font-family: sans-serif;
+    background: url("tyler after2.jpg") no-repeat center center fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    /* Removed body padding to allow main content to align fully left */
+    text-align: left; /* Default to left alignment */
+    color: #333;
+    display: flex; /* Use flexbox for layout */
+}
 
-        body {
-            font-family: sans-serif;
-            background: url("tyler after2.jpg") no-repeat center center fixed;
-            background-size: cover;
-            background-repeat: no-repeat;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            color: #333;
-            padding: 15vw;
-        }
+/* New container for the main content on the left side */
+#main-container {
+    width: 25%; /* Takes up a quarter of the screen width */
+    min-width: 200px; /* Minimum width for usability */
+    max-width: 400px; /* Maximum width for larger screens */
+    padding: 10px;
+    box-sizing: border-box;
+    /* Added a semi-transparent background to the container for readability */
+    background-color: rgba(255, 255, 255, 0.85);
+}
 
-        /* --- Fluid Typography --- */
-        h1 {
-            text-align: center;
-            font-size: 5vw;
-            color: #ff0000;
-            font-family: cursive;
-            text-shadow: 3px 3px gold;
-        }
+h1 {
+    text-align: left;
+    font-size: 5vw;
+    color: #ff0000;
+    font-family: cursive;
+    text-shadow: 3px 3px gold;
+    padding-left: 10px;
+}
 
-        h2 {
-            color: indianred;
-            text-decoration: dotted;
-            text-shadow: 3px 3px aquamarine;
-            font-family: cursive;
-            font-size: 4vw;
-        }
+h2 {
+    color: indianred;
+    text-decoration: dotted;
+    text-shadow: 3px 3px aquamarine;
+    font-family: cursive;
+    font-size: 4vw;
+    text-align: left;
+}
 
-        ul, li {
-            font-family: cursive;
-            color: darkgreen;
-            text-shadow: 2px 2px plum;
-            font-size: 3vw;
-            list-style-position: inside;
-            padding: 0;
-        }
+ul, li {
+    font-family: cursive;
+    color: darkgreen;
+    text-shadow: 2px 2px plum;
+    font-size: 3vw;
+    list-style-position: inside;
+    padding-left: 0;
+    text-align: left;
+}
 
-        #content {
-            padding: 15px;
-            margin: 15px;
-            /* background-color removed - content is now transparent */
-            border-radius: 10px;
-        }
+#content {
+    padding: 15px;
+    margin: 15px 0; /* Adjusted margin */
+    /* background-color removed - content is transparent within its container */
+    border-radius: 10px;
+}
 
-        /* --- Table Responsiveness --- */
-        table {
-            border-collapse: collapse;
-            font-family: cursive;
-            text-align: center;
-            width: 100%;
-            font-size: 3vw;
-            margin: auto;
-        }
+/* --- Table Responsiveness --- */
+table {
+    border-collapse: collapse;
+    font-family: cursive;
+    text-align: left; /* Left justified */
+    width: 100%;
+    font-size: 3vw;
+    margin: auto;
+}
 
-        th, td {
-            text-shadow: 2px 2px #ff0000;
-            font-family: cursive;
-            color: indigo;
-            text-decoration: wavy;
-            background-color: royalblue; /* Original Color - still has background */
-            vertical-align: top;
-            border: 1px solid #dddddd;
-            text-align: center;
-            padding: 8px;
-            max-width: 100%;
-            word-wrap: break-word;
-            font-size: 3vw;
-        }
+th, td {
+    text-shadow: 2px 2px #ff0000;
+    font-family: cursive;
+    color: indigo;
+    text-decoration: wavy;
+    background-color: royalblue;
+    vertical-align: top;
+    border: 1px solid #dddddd;
+    text-align: left; /* Left justified */
+    padding: 8px;
+    max-width: 100%;
+    word-wrap: break-word;
+    font-size: 3vw;
+}
 
-        /* --- Modal/Popup Styling --- */
-        #popup {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0px;
-            left: 0px;
-            z-index: 1000;
-            background-color: rgba(255, 255, 255, 0.9);
-            display: none; 
-            justify-content: center;
-            align-items: center;
-        }
+/* --- Modal/Popup Styling --- */
+#popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: none; 
+    justify-content: center;
+    align-items: center;
+}
 
-        #confirm {
-            width: 80%;
-            max-width: 400px;
-            border: 3px solid green;
-            padding: 20px;
-            /* background-color removed - confirm dialog is now transparent */
-            border-radius: 10px;
-        }
+#confirm {
+    width: 80%;
+    max-width: 400px;
+    border: 3px solid green;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+}
 
-        /* --- Button and Input Styling --- */
-        #button {
-            border-width: 5px;
-            border-style: solid;
-            border-color: blue;
-            color: red;
-            font-family: cursive;
-            font-size: 4vw;
-            padding: 10px 20px;
-            cursor: default;
-        }
+/* --- Button and Input Styling --- */
+#button {
+    border-width: 5px;
+    border-style: solid;
+    border-color: blue;
+    color: red;
+    font-family: cursive;
+    font-size: 4vw;
+    padding: 10px 20px;
+    cursor: default;
+}
 
-        input {
-            font-family: cursive;
-            width: 80%;
-            padding: 10px;
-            margin-top: 10px;
-        }
+input {
+    font-family: cursive;
+    width: 80%;
+    padding: 10px;
+    margin-top: 10px;
+}
 
-        /* --- Fixed Positioned Images (Hearts/Star) --- */
-        .corner-heart {
-            position: fixed;
-            width: 12vw; 
-            height: auto;
-            z-index: 999;
-        }
+/* --- Fixed Positioned Images (Hearts/Star) --- */
+.corner-heart {
+    position: fixed;
+    width: 12vw; 
+    height: auto;
+    z-index: 999;
+}
 
-        #heart1 {
-            top: 10px;
-            right: 10px;
-        }
+#heart1 {
+    top: 10px;
+    right: 10px;
+}
 
-        #heart2 {
-            left: 10px;
-            bottom: 10px;
-        }
+#heart2 {
+    left: 10px;
+    bottom: 10px;
+}
 
-        #heart3 {
-            bottom: 10px;
-            right: 10px;
-        }
+#heart3 {
+    bottom: 10px;
+    right: 10px;
+}
 
-        #heart4 {
-            top: 10px;
-            left: 10px;
-        }
+#heart4 {
+    top: 10px;
+    left: 10px;
+}
 
-        #star {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 20vw;
-            max-width: 100px;
-            z-index: 998;
-        }
+#star {
+    position: fixed; /* Fixed relative to the viewport, not the container */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20vw;
+    max-width: 100px;
+    z-index: 998;
+}
 
-        /* --- Media Queries for Readability Bounds --- */
-        @media (min-width: 768px) {
-            h1 { font-size: 36px; }
-            h2 { font-size: 24px; }
-            ul, li, th, td, table { font-size: 18px; }
-            #button { font-size: 24px; }
-            .corner-heart { width: 90px; }
-            body { padding: 100px; }
-        }
-  
-
+/* --- Media Queries for Readability Bounds --- */
+@media (min-width: 768px) {
+    h1 { font-size: 36px; }
+    h2 { font-size: 24px; }
+    ul, li, th, td, table { font-size: 18px; }
+    #button { font-size: 24px; }
+    .corner-heart { width: 90px; }
+    #main-container { padding: 100px; }
+}
