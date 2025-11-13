@@ -6,20 +6,19 @@ body {
     background-repeat: no-repeat;
     margin: 0;
     padding: 0;
-    /* Removed body padding to allow main content to align fully left */
-    text-align: left; /* Default to left alignment */
+    text-align: left; /* Left justified */
     color: #333;
-    display: flex; /* Use flexbox for layout */
+    /* Add padding to the body to prevent overlap with fixed corner hearts */
+    padding: 15vw;
+    display: flex;
 }
 
-/* New container for the main content on the left side */
 #main-container {
-    width: 25%; /* Takes up a quarter of the screen width */
-    min-width: 200px; /* Minimum width for usability */
-    max-width: 400px; /* Maximum width for larger screens */
+    width: 25%;
+    min-width: 200px;
+    max-width: 400px;
     padding: 10px;
     box-sizing: border-box;
-    /* Added a semi-transparent background to the container for readability */
     background-color: rgba(255, 255, 255, 0.85);
 }
 
@@ -53,8 +52,7 @@ ul, li {
 
 #content {
     padding: 15px;
-    margin: 15px 0; /* Adjusted margin */
-    /* background-color removed - content is transparent within its container */
+    margin: 15px 0;
     border-radius: 10px;
 }
 
@@ -62,7 +60,7 @@ ul, li {
 table {
     border-collapse: collapse;
     font-family: cursive;
-    text-align: left; /* Left justified */
+    text-align: left;
     width: 100%;
     font-size: 3vw;
     margin: auto;
@@ -76,7 +74,7 @@ th, td {
     background-color: royalblue;
     vertical-align: top;
     border: 1px solid #dddddd;
-    text-align: left; /* Left justified */
+    text-align: left;
     padding: 8px;
     max-width: 100%;
     word-wrap: break-word;
@@ -133,28 +131,40 @@ input {
     z-index: 999;
 }
 
+/* heart1 at top left of screen */
 #heart1 {
     top: 10px;
-    right: 10px;
-}
-
-#heart2 {
     left: 10px;
-    bottom: 10px;
+    right: auto;
+    bottom: auto;
 }
 
+/* heart2 at top right of screen */
+#heart2 {
+    top: 10px;
+    right: 10px;
+    left: auto;
+    bottom: auto;
+}
+
+/* heart3 at bottom left of screen */
 #heart3 {
     bottom: 10px;
-    right: 10px;
+    left: 10px;
+    top: auto;
+    right: auto;
 }
 
+/* heart4 at bottom right of screen */
 #heart4 {
-    top: 10px;
-    left: 10px;
+    bottom: 10px;
+    right: 10px;
+    top: auto;
+    left: auto;
 }
 
 #star {
-    position: fixed; /* Fixed relative to the viewport, not the container */
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -170,5 +180,5 @@ input {
     ul, li, th, td, table { font-size: 18px; }
     #button { font-size: 24px; }
     .corner-heart { width: 90px; }
-    #main-container { padding: 100px; }
+    body { padding: 100px; }
 }
