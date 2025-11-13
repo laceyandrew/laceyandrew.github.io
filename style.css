@@ -10,6 +10,8 @@ body {
     text-align: left; /* Left justified */
     color: #333;
     display: flex;
+    /* Added brown background color */
+    background-color: brown; 
 }
 
 #main-container {
