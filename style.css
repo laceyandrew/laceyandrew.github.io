@@ -9,29 +9,36 @@ body {
     padding: 0;
     text-align: left; /* Left justified */
     color: #333;
-    display: flex;
-    /* Changed to specified color #B3907A */
+    /* Added top padding to prevent content from overlapping the fixed h1 */
+    padding-top: 15vw; 
     background-color: #B3907A; 
 }
 
+/* Position H1 at the top of the screen */
+h1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1001; /* Higher than hearts/star */
+    text-align: center; /* Always centered */
+    font-size: 5vw;
+    color: #ff0000;
+    font-family: cursive;
+    text-shadow: 3px 3px gold;
+    padding: 10px; /* Added padding */
+    background-color: rgba(255, 255, 255, 0.85); /* Background for readability */
+}
+
 #main-container {
-    width: calc(25% - 20px); 
+    width: 25%; 
     min-width: 200px;
     max-width: 400px;
     padding: 10px;
     box-sizing: border-box;
     background-color: rgba(255, 255, 255, 0.85);
-    /* Add margins to prevent overlap with fixed heart images */
-    margin: 15vw 10px 15vw 15vw; 
-}
-
-h1 {
-    text-align: left;
-    font-size: 5vw;
-    color: #ff0000;
-    font-family: cursive;
-    text-shadow: 3px 3px gold;
-    padding-left: 10px;
+    /* Auto margins to center the container horizontally */
+    margin: 0 auto; 
 }
 
 h2 {
@@ -170,10 +177,11 @@ input {
 
 /* --- Media Queries for Readability Bounds --- */
 @media (min-width: 768px) {
-    h1 { font-size: 36px; }
+    h1 { font-size: 36px; padding: 15px; } /* Adjust padding for desktop */
     h2 { font-size: 24px; }
     ul, li, th, td, table { font-size: 18px; }
     #button { font-size: 24px; }
     .corner-heart { width: 90px; }
-    #main-container { margin: 100px 10px 100px 100px; }
+    /* Adjust body padding for desktop (approx h1 height + original padding) */
+    body { padding-top: 100px; } 
 }
