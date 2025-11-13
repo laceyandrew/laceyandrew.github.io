@@ -6,7 +6,7 @@ body {
     background-repeat: no-repeat;
     margin: 0;
     padding: 0;
-    text-align: center;
+    text-align: left; /* Default alignment changed to left */
     color: #333;
 }
 
@@ -18,7 +18,7 @@ body {
     top: 0;
     left: 0;
     z-index: 1000;
-    background-color: #ffffff; /* This is the opaque white background */
+    background-color: #ffffff; /* Opaque white background */
     display: flex; /* Use flexbox to center content */
     justify-content: center;
     align-items: center;
@@ -36,26 +36,88 @@ body {
 }
 
 #confirm h1 {
-    margin-top: 0; 
+    margin-top: 0;
+    color: #ff0000; /* Original color */
+    font-family: cursive;
+    text-shadow: 3px 3px gold; /* Original color */
 }
 
 button {
     padding: 10px 20px;
-    background-color: #ff007f;
-    color: white;
-    border: none;
-    border-radius: 5px;
+    /* Original button colors restored */
+    background-color: transparent; 
+    color: red; 
+    border: 10px; /* Original width - likely meant for border-width property */
+    border-color: blue; /* Original color */
     cursor: pointer;
-    font-size: 1em;
+    font-size: xx-large; /* Original size */
+    font-family: cursive; /* Original font */
     margin-top: 10px;
 }
 
 /* --- Rest of the page styling (for context) --- */
-h1, h2 { color: #ff007f; }
-#content { padding: 20px; margin: 15px; background: white; border-radius: 8px; }
-ul { list-style-position: inside; padding: 0; }
-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+h1, h2 { color: #ff007f; text-align: left; }
+h1 {
+    color: #ff0000;
+    font-family: cursive;
+    text-shadow: 3px 3px gold;
+}
+h2 {
+    color: indianred; /* Original color */
+    text-decoration: dotted;
+    text-shadow: 3px 3px aquamarine; /* Original color */
+    font-family: cursive;
+}
+
+#content { 
+    padding: 20px; 
+    margin: 15px; 
+    background: white; 
+    border-radius: 8px; 
+    text-align: left;
+}
+ul { 
+    list-style-position: inside; 
+    padding: 0; 
+    text-align: left;
+    margin-bottom: 0;
+    color: darkgreen; /* Original color */
+    text-shadow: 2px 2px plum; /* Original color */
+}
+li {
+    color: darkgreen; /* Original color */
+    text-shadow: 2px 2px plum; /* Original color */
+    font-family: cursive;
+}
+
+/* --- Table Styling --- */
+table { 
+    width: auto; 
+    border-collapse: collapse; 
+    margin-top: 10px; 
+    text-align: left; 
+    margin-left: 0;
+    margin-right: auto;
+    border-color: aqua; /* Original color */
+    border-width: 20px; /* Original width - note this is very large */
+}
+th, td { 
+    border: 1px solid #ddd; 
+    padding: 8px; 
+    text-align: left; 
+    text-shadow: 2px 2px #ff0000; /* Original color */
+    font-family: cursive;
+    color: indigo; /* Original color */
+    text-decoration: wavy;
+    background-color: royalblue; /* Original color */
+}
+
+/* --- Form and Button Alignment --- */
+form {
+    text-align: left; 
+    margin-top: 10px;
+}
+
 img { max-width: 100%; height: auto; margin: 5px 0; }
 .corner-heart { position: fixed; width: 12vw; z-index: 999; }
 #heart-top-left { top: 10px; left: 10px; }
