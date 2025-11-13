@@ -1,12 +1,14 @@
 /* --- General Mobile-Friendly Resets & Fluid Typography --- */
 body {
     font-family: sans-serif;
+    /* Changed to contain: Ensures the full image is visible, even if there is empty space */
     background: url("tyler after2.jpg") no-repeat center center fixed;
-    background-size: cover;
+    background-size: contain; 
     background-repeat: no-repeat;
+    background-position: center center;
     margin: 0;
-    /* Add padding to the body to prevent overlap with fixed corner hearts */
-    padding: 15vw;
+    /* Removed padding from body as hearts do not overlap main-container */
+    padding: 0;
     text-align: left; /* Left justified */
     color: #333;
     display: flex;
@@ -171,5 +173,5 @@ input {
     ul, li, th, td, table { font-size: 18px; }
     #button { font-size: 24px; }
     .corner-heart { width: 90px; }
-    body { padding: 100px; }
+    #main-container { padding: 100px; }
 }
