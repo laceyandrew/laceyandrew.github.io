@@ -12,35 +12,49 @@
     <style>
         body {
             font-family: sans-serif;
-            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
             text-align: center;
             color: #333;
             /* Base font size for large screens, uses fluid scaling on mobile */
             font-size: 16px; 
+
+            /* --- Background Image Styling --- */
+            /* Replace 'your_background_image.jpg' with the path to your image */
+            background-image: url('your_background_image.jpg'); 
+            background-size: cover; /* Ensures the image covers the whole screen */
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* Keeps image fixed during scroll */
+            background-position: center; /* Centers the image */
+        }
+
+        /* Adds a slight overlay to ensure text is readable over the image */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.5); /* White overlay with 50% opacity */
+            z-index: -1; /* Puts the overlay behind the content but above the background image */
         }
 
         /* --- Fluid Typography --- */
-        /* H1 scales from 24px to ~40px depending on screen size */
         h1 {
             color: #ff007f;
             font-size: 6vw; 
-            min-font-size: 24px; /* Ensure a minimum size */
         }
 
-        /* H2 scales from 18px to ~28px */
         h2 {
             color: #ff007f;
             font-size: 4.5vw;
-            min-font-size: 18px;
         }
 
-        /* General text (li, td, p, button) */
         #confirm h1 {
              font-size: 5vw;
         }
-        button, ul, table {
+        button, ul, table, th, td {
             font-size: 3.5vw;
         }
 
@@ -49,7 +63,7 @@
             h1 { font-size: 36px; }
             h2 { font-size: 24px; }
             #confirm h1 { font-size: 28px; }
-            button, ul, table { font-size: 18px; }
+            button, ul, table, th, td { font-size: 18px; }
         }
 
 
@@ -92,7 +106,7 @@
         #content {
             padding: 20px;
             margin: 15px;
-            background: white;
+            background: rgba(255, 255, 255, 0.8); /* Semi-transparent background for readability */
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
@@ -112,6 +126,7 @@
             border: 1px solid #ddd;
             padding: 8px;
             text-align: center;
+            background-color: rgba(255, 255, 255, 0.7); /* Table cell background */
         }
 
         img {
