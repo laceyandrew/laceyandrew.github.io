@@ -1,7 +1,7 @@
 /* --- General Mobile-Friendly Resets & Fluid Typography --- */
 body {
     font-family: sans-serif;
-    /* background: url("tyler after2.jpg") no-repeat center center fixed; <-- Add your background image here if needed */
+    background: url("tyler after2.jpg") no-repeat center center fixed; <-- Add your background image here if needed */
     background-size: cover;
     background-repeat: no-repeat;
     margin: 0;
