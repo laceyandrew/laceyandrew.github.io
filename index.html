@@ -8,6 +8,57 @@
     <meta name="description" content="A page for Suzette">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
+    <!-- Inline CSS has been added here as requested in previous turns -->
+    <style>
+        /* Basic styles to make the page usable without a stylesheet */
+        body { font-family: sans-serif; margin: 0; padding: 0; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+        img { max-width: 100%; height: auto; }
+        
+        /* --- Popup Styling --- */
+        #popup {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            background-color: #ffffff; /* Opaque white background */
+            display: flex; /* Use flexbox to center content */
+            justify-content: center;
+            align-items: center;
+        }
+
+        #confirm {
+            padding: 20px;
+            margin: 15px;
+            border: 1px solid #888;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 400px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            /* Content within the modal will now be centered in the screen */
+            text-align: center; 
+        }
+
+        #confirm h1 {
+            /* H1 within confirm is now centered via parent flexbox */
+            margin-top: 0; 
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #ff007f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 10px;
+        }
+
+    </style>
     
     <audio id="audioID" autoplay loop>
         <source src="Careless Air Horn.mp3" type="audio/mp3">
