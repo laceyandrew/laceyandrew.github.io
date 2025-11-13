@@ -1,18 +1,122 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Suzette come hoooome</title>
-    <meta name="description" content="">
+    <meta name="description" content="A page for Suzette">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
-    <audio id="audioID" autoplay loop>
+    
+    <!-- Inline CSS for demonstration - move to style.css for best practice -->
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: #333;
+        }
+
+        /* Popup Modal Styling */
+        #popup {
+            display: none;
+            position: fixed; /* Fixed position for modal */
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex; /* Use flexbox to center content */
+            justify-content: center;
+            align-items: center;
+        }
+
+        #confirm {
+            background-color: white;
+            padding: 20px;
+            margin: 15px;
+            border: 1px solid #888;
+            border-radius: 10px;
+            width: 80%; /* Responsive width */
+            max-width: 400px; /* Max size for larger screens */
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #ff007f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        /* Main Content Styling */
+        h1, h2 {
+            color: #ff007f;
+        }
+
+        #content {
+            padding: 20px;
+            margin: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        ul {
+            list-style-position: inside;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        /* Responsive Image Styling */
+        img {
+            max-width: 100%; /* Images scale down to fit container */
+            height: auto; /* Maintain aspect ratio */
+            margin: 5px 0;
+        }
+
+        /* Use flexbox for image container to allow wrapping */
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px; /* Space between images */
+            padding: 10px;
+        }
+
+        .image-container img {
+            max-width: 100px; /* Control size of individual small images */
+        }
+    </style>
+    
+    <audio id="audioID" loop>
         <source src="Careless Air Horn.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
@@ -22,74 +126,76 @@
 <body>
 
     <script type="text/javascript">
+        // Ensure popup shows on load
         function show_popup() {
-            document.getElementById('popup').style.display = 'block';
+            document.getElementById('popup').style.display = 'flex'; // Use flex for centering
         }
 
         window.onload = show_popup;
     </script>
+    
     <div id="popup">
         <div id="confirm">
-            <h1>Only enter if you are Suzette!</h1><br>
+            <h1>Only enter if you are Suzette!</h1>
             <button onclick="hide()">I am Suzette loverboy</button>
         </div>
     </div>
         
-            <h1>Suzette come home!!</h1>
-            <div id="content">
-                <h2>Reasons to love me agaun</h2>
-                <ul>
-                    <li>My muscles</li>
-                    <li>My body</li>
-                    <li>Im an army man </li>
-                    <li>Baby please come home!</li>
-                </ul>
-                <br>
-                <table>
-                    <th>Days Im available to love you:</th>
-                </table>
-                <table>
-                    <tr>
+    <h1>Suzette come home!!</h1>
+    
+    <div id="content">
+        <h2>Reasons to love me agaun</h2>
+        <ul>
+            <li>My muscles</li>
+            <li>My body</li>
+            <li>Im an army man</li>
+            <li>Baby please come home!</li>
+        </ul>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="4">Days Im available to love you:</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Monday</td>
+                    <td>Friday</td>
+                    <td>Easter</td>
+                    <td>the rest of your life</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <form>
+            <button id="button" type="button" onclick="clicked()">Click to love me again!</button>
+        </form>
+    </div>
 
-                    </tr>
-                    <tr>
-                        <td>Monday</td>
-                        <td>Friday</td>
-                        <td>Easter</td>
-                        <td>the rest of your life</td>
-                    </tr>
-                </table>
-                <br>
-                <form>
-                    <button id="button" value="Click to love me again baby" onclick="clicked()">Click to love me
-                        again!</button>
-                </form>
-            </div>
-        <div>
-            <IMG id="heart1" SRC="Heart_dancing.gif">
-            <IMG id="heart2" SRC="dancing-heart-021407.gif">
-            <IMG id="heart3" SRC="2-jumping-heart.gif">
-            <IMG id="heart4" SRC="heart.gif">
-            <IMG id="star" SRC="giphy.gif">
-        </div>
+    <!-- Image Container -->
+    <div class="image-container">
+        <img id="heart1" src="Heart_dancing.gif" alt="Dancing heart 1">
+        <img id="heart2" src="dancing-heart-021407.gif" alt="Dancing heart 2">
+        <img id="heart3" src="2-jumping-heart.gif" alt="Jumping heart">
+        <img id="heart4" src="heart.gif" alt="Heart">
+        <img id="star" src="giphy.gif" alt="Star gif">
+    </div>
 
     <script>
         function clicked() {
-            alert("I love you too sugar plum")
+            alert("I love you too sugar plum");
         }
-    </script>
-
-    <script>
-        function hide() {
-            var x = document.getElementById("audioID");
-            var popUp = document.getElementById("popup").style.display = "none";
-            var myaudio = document.getElementById("audioID").autoplay = true;
-            x.play();
-        }
-    </script>
-
         
-
+        function hide() {
+            var audio = document.getElementById("audioID");
+            document.getElementById("popup").style.display = "none";
+            // Set autoplay true just in case, but play() is more direct
+            audio.autoplay = true; 
+            audio.play();
+        }
+    </script>
+        
 </body>
 
 </html>
