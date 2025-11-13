@@ -17,9 +17,6 @@ body {
 /* Position H1 at the top of the screen */
 h1 {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
     z-index: 1001; /* Higher than hearts/star */
     text-align: center; /* Always centered */
     font-size: 5vw;
