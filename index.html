@@ -6,23 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Suzette come hoooome</title>
     <meta name="description" content="A page for Suzette">
-    <!-- Essential for mobile responsiveness -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <!-- Inline CSS for demonstration - move to style.css for best practice -->
     <style>
         body {
             font-family: sans-serif;
-            background-color: #f4f4f4; /* Fallback color */
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
             text-align: center;
             color: #333;
-            /* Base font size for large screens */
             font-size: 16px; 
         }
 
-        /* --- Fluid Typography (Text scales with viewport width) --- */
+        /* --- Fluid Typography --- */
         h1 {
             color: #ff007f;
             font-size: 6vw; 
@@ -40,14 +38,13 @@
             font-size: 3.5vw;
         }
 
-        /* Media queries to set minimum/maximum text sizes for readability */
+        /* Media queries for text size */
         @media (min-width: 600px) {
             h1 { font-size: 36px; }
             h2 { font-size: 24px; }
             #confirm h1 { font-size: 28px; }
             button, ul, table, th, td { font-size: 18px; }
         }
-
 
         /* --- Layout and Component Styling --- */
         #popup {
@@ -59,7 +56,7 @@
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.7);
-            display: flex; /* Centers the modal content */
+            display: flex;
             justify-content: center;
             align-items: center;
         }
@@ -109,24 +106,42 @@
             text-align: center;
         }
 
-        /* Responsive Image Styling */
-        img {
-            max-width: 100%;
+        /* --- Heart Images in Corners --- */
+        /* Common styling for all heart images */
+        .corner-heart {
+            position: fixed; /* Fixed relative to the viewport */
+            max-width: 12vw; /* Max width relative to viewport width */
             height: auto;
-            margin: 5px 0;
+            z-index: 999; /* Higher than other content but below the popup */
+            animation: pulse 1.5s infinite; /* Add a pulse animation */
+        }
+        
+        /* Pulse animation keyframes */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
 
-        /* Use flexbox for image container to allow wrapping on small screens */
-        .image-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            padding: 10px;
+        /* Specific positioning for each corner */
+        #heart-top-left {
+            top: 10px;
+            left: 10px;
         }
 
-        .image-container img {
-            max-width: 100px;
+        #heart-top-right {
+            top: 10px;
+            right: 10px;
+        }
+
+        #heart-bottom-left {
+            bottom: 10px;
+            left: 10px;
+        }
+
+        #heart-bottom-right {
+            bottom: 10px;
+            right: 10px;
         }
     </style>
     
@@ -140,7 +155,6 @@
 <body>
 
     <script type="text/javascript">
-        // Change display to flex for correct vertical centering of the modal
         function show_popup() {
             document.getElementById('popup').style.display = 'flex';
         }
@@ -185,14 +199,12 @@
             <button id="button" type="button" onclick="clicked()">Click to love me again!</button>
         </form>
     </div>
-
-    <div class="image-container">
-        <img id="heart1" src="Heart_dancing.gif" alt="Dancing heart 1">
-        <img id="heart2" src="dancing-heart-021407.gif" alt="Dancing heart 2">
-        <img id="heart3" src="2-jumping-heart.gif" alt="Jumping heart">
-        <img id="heart4" src="heart.gif" alt="Heart">
-        <img id="star" src="giphy.gif" alt="Star gif">
-    </div>
+    
+    <!-- Heart images placed in corners using fixed positioning -->
+    <img id="heart-top-left" class="corner-heart" src="Heart_dancing.gif" alt="Dancing heart">
+    <img id="heart-top-right" class="corner-heart" src="dancing-heart-021407.gif" alt="Dancing heart 2">
+    <img id="heart-bottom-left" class="corner-heart" src="2-jumping-heart.gif" alt="Jumping heart">
+    <img id="heart-bottom-right" class="corner-heart" src="heart.gif" alt="Heart">
 
     <script>
         function clicked() {
