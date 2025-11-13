@@ -8,8 +8,7 @@
     <meta name="description" content="A page for Suzette">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <!-- Inline CSS for demonstration - move to style.css for best practice -->
-    <link rel="stylesheet" href="style.css"> 
+    
     <audio id="audioID" autoplay loop>
         <source src="Careless Air Horn.mp3" type="audio/mp3">
         Your browser does not support the audio element.
@@ -78,7 +77,7 @@
         
         function hide() {
             var x = document.getElementById("audioID");
-            document.getElementById("popup").style.display = "none";
+            document.getElementById("popup").style.display = "none"; 
             x.play();
         }
     </script>
