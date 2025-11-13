@@ -1,37 +1,36 @@
 /* --- General Mobile-Friendly Resets & Fluid Typography --- */
 body {
     background: url("tyler after2.jpg") no-repeat center center fixed;
-    /* Changed background-size to cover for better mobile image display */
-    background-size: cover; 
+    background-size: cover; /* Ensures the image covers the whole screen */
     background-repeat: no-repeat;
-    /* Added text color for general body text (like the input field and list items) */
-    color: #333; 
     margin: 0;
     padding: 0;
+    /* Color not explicitly set in original, added for default text visibility */
+    color: #333; 
 }
 
 h1 {
     text-align: center;
-    font-size: 5vw; /* Fluid font size */
-    color: #ff0000;
+    font-size: 5vw;
+    color: #ff0000; /* Original Color */
     font-family: cursive;
-    text-shadow: 3px 3px gold;
+    text-shadow: 3px 3px gold; /* Original Color */
 }
 
 h2 {
-    color: indianred;
+    color: indianred; /* Original Color */
     text-decoration: dotted;
-    text-shadow: 3px 3px aquamarine;
+    text-shadow: 3px 3px aquamarine; /* Original Color */
     font-family: cursive;
-    font-size: 4vw; /* Fluid font size */
+    font-size: 4vw;
 }
 
 ul, li {
     font-family: cursive;
-    color: darkgreen;
-    text-shadow: 2px 2px plum;
-    font-size: 3vw; /* Fluid font size */
-    list-style-position: inside; /* Keeps bullets inside the content area */
+    color: darkgreen; /* Original Color */
+    text-shadow: 2px 2px plum; /* Original Color */
+    font-size: 3vw;
+    list-style-position: inside;
     padding: 0;
 }
 
@@ -39,38 +38,34 @@ ul, li {
 #content {
     padding: 15px;
     margin: 15px;
-    background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent white background */
+    background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent background for readability */
     border-radius: 10px;
 }
 
 /* --- Table Responsiveness --- */
-/* Wrap table in a div if needed for horizontal scroll, but simplified here */
 table {
-    border-collapse: collapse; /* Cleaner table look */
-    border-color: aqua; /* Note: border-color on table tag is deprecated, use border on th/td */
-    border-width: 20px;
+    border-collapse: collapse;
+    /* Original border-color/width was on table tag (deprecated use), relying on th/td */
     font-family: cursive;
     text-align: center;
-    width: 100%; /* Ensure table spans full width */
-    font-size: 3vw; /* Fluid font size */
+    width: 100%;
+    font-size: 3vw; 
     margin: auto;
 }
 
 th, td {
-    text-shadow: 2px 2px #ff0000;
+    text-shadow: 2px 2px #ff0000; /* Original Color */
     font-family: cursive;
-    color: indigo;
-    /* text-decoration: wavy; is often hard to read, removed/kept based on preference */
-    background-color: royalblue;
-    /* display: table-cell; is default */
+    color: indigo; /* Original Color */
+    text-decoration: wavy;
+    background-color: royalblue; /* Original Color */
     vertical-align: top;
     border: 1px solid #dddddd;
-    text-align: center; /* Changed from left to center for better mobile alignment */
+    text-align: center; /* Adjusted alignment for mobile */
     padding: 8px;
     max-width: 100%;
-    /* Removed white-space: nowrap to allow text to wrap on mobile */
-    word-wrap: break-word; 
-    font-size: 3vw; /* Fluid font size */
+    word-wrap: break-word; /* Allows text wrap on mobile */
+    font-size: 3vw;
 }
 
 /* --- Modal/Popup Styling --- */
@@ -82,32 +77,29 @@ th, td {
     left: 0px;
     z-index: 1000;
     background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
-    /* Use flexbox to center #confirm div */
-    display: flex; 
+    display: flex; /* Centers the modal content */
     justify-content: center;
     align-items: center;
 }
 
 #confirm {
-    /* Removed margin: auto and width: 50% for mobile centering */
-    width: 80%; /* Takes up 80% of the screen width */
-    max-width: 400px; /* Max size for desktop views */
-    border: 3px solid green;
+    width: 80%;
+    max-width: 400px;
+    border: 3px solid green; /* Original Color */
     padding: 20px;
-    background-color: white; /* Ensure background to contrast popup background */
+    background-color: white; 
     border-radius: 10px;
 }
 
 /* --- Button and Input Styling --- */
 #button {
-    /* border: 10px; is shorthand, use border-width: 10px; if needed */
     border-width: 5px; 
     border-style: solid;
-    border-color: blue;
-    color: red;
+    border-color: blue; /* Original Color */
+    color: red; /* Original Color */
     font-family: cursive;
-    font-size: 4vw; /* Fluid font size */
-    padding: 10px 20px; /* Add padding for easy tapping */
+    font-size: 4vw;
+    padding: 10px 20px;
 }
 
 input {
@@ -118,18 +110,18 @@ input {
 }
 
 /* --- Fixed Positioned Images (Hearts/Star) --- */
-/* Unified styling for absolute/fixed elements */
+/* Unified styling for absolute/fixed elements using 'fixed' positioning */
 #heart1, #heart2, #heart3, #heart4, #star {
-    position: fixed; /* Use fixed positioning for consistency across all corner elements */
-    width: 15vw; /* Use viewport units for responsive sizing */
-    height: auto; /* Maintain aspect ratio */
+    position: fixed;
+    width: 15vw; /* Responsive sizing */
+    height: auto; 
     z-index: 999;
 }
 
 #heart1 {
     top: 10px;
     right: 10px;
-    width: 12vw; /* Slightly smaller to fit better */
+    width: 12vw;
 }
 
 #heart2 {
@@ -152,10 +144,10 @@ input {
 
 #star {
     top: 50%;
-    left: 50%; /* Center the star */
-    transform: translate(-50%, -50%); /* Precisely center the element */
-    width: 20vw; /* Responsive width */
-    max-width: 100px; /* Max size */
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    width: 20vw; 
+    max-width: 100px; 
 }
 
 
@@ -166,10 +158,4 @@ input {
     h2 { font-size: 24px; }
     ul, li, th, td, table { font-size: 18px; }
     #button { font-size: 24px; }
-}
-
-/* Ensure minimum text size on very small screens */
-@media (max-width: 320px) {
-     h1 { font-size: 6vw; } /* Ensure it still scales down if needed */
-     th, td { font-size: 3.5vw; }
 }
