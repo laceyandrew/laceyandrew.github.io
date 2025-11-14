@@ -77,6 +77,9 @@ h2 {
 }
 
 /* --- Content Area Positioning --- */
+#content h1 {
+    text-align: center;
+}
 #content { 
     padding: 20px; 
     margin: 15px 0 15px 20px; /* Add left margin to stay right of heart */
