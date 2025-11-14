@@ -4,6 +4,7 @@ body {
     background: url("tyler after2.gif") no-repeat center center fixed; 
     background-size: contain;
     background-repeat: no-repeat;
+    background-color: #B59075;
     margin: 0;
     padding: 0;
     text-align: left; /* Default alignment changed to left */
