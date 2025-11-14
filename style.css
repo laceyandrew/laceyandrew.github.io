@@ -1,9 +1,9 @@
 /* --- General Mobile-Friendly Resets & Fluid Typography --- */
 body {
     font-family: sans-serif;
-    background: url("tyler after 2.gif") no-repeat center center fixed; 
+    background: url("tyler after 2.gif") repeat center center fixed; 
     background-size: contain;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-color: #B59075;
     margin: 0;
     padding: 0;
@@ -60,6 +60,7 @@ button {
     font-family: cursive; 
     margin-top: 10px;
 }
+
 
 /* --- H1 Positioning --- */
 /* The main H1 is no longer fixed to the top, it flows with content */
@@ -133,21 +134,22 @@ th, td {
 
 /* --- Form and Button Alignment --- */
 form {
-  border: 2px solid #04AA6D; /* Sets a 2px solid green border */
+  border: 4px solid #04AA6D; /* Sets a 2px solid green border */
    padding: 0px 0px; /* Optional: adds padding for better appearance */
-   background-color: white; /* Optional: sets background color */
+   background-color: #e9ff00; /* Optional: sets background color */
    text-align: center; 
    margin-top: 5px;
    margin-bottom: 5px;
+   font-size:small;
 }
 
 @media (max-width: 768px) {
     #content {
         position: fixed; /* Fixes it relative to the viewport */
-        top: 80%;        /* Moves the top edge to the middle */
+        top: 50%;        /* Moves the top edge to the middle */
         left: 50%;       /* Moves the left edge to the middle */
         transform: translate(-50%, -50%); /* Shifts it back by half its own width and height to truly center it */
-        width: 70%;      /* Adjust width for mobile view */
+        width: 50%;      /* Adjust width for mobile view */
         max-width: none; /* Remove previous max-width constraints if any */
         height: auto;    /* Height adapts to content */
         max-height: 90vh; /* Constrain max height to avoid it going off-screen on small devices */
