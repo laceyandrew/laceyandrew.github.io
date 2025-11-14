@@ -133,8 +133,11 @@ th, td {
 
 /* --- Form and Button Alignment --- */
 form {
-    text-align: left; 
-    margin-top: 10px;
+   border: 2px solid #04AA6D; /* Sets a 2px solid green border */
+   padding: 10px 20px; /* Optional: adds padding for better appearance */
+   background-color: white; /* Optional: sets background color */
+   text-align: left; 
+   margin-top: 10px;
 }
 
 img { max-width: 100%; height: auto; margin: 5px 0; }
