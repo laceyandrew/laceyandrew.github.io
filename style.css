@@ -140,6 +140,20 @@ form {
    margin-top: 10px;
 }
 
+@media (max-width: 768px) {
+    #content {
+        position: fixed; /* Fixes position relative to viewport */
+        bottom: 10px; /* Aligns to the bottom */
+        left: 50%; /* Starts at the middle of the screen */
+        transform: translateX(-50%); /* Centers the div */
+        width: 90%; /* Responsive width */
+        max-width: none; /* Remove max-width constraint if necessary */
+        margin: 0; /* Remove previous margins */
+        text-align: center; /* Center content within the div on mobile */
+        /* Adjust height constraints for mobile view if needed */
+        max-height: 40vh; /* Example: limit height to 40% of viewport height */
+    }
+
 img { max-width: 100%; height: auto; margin: 5px 0; }
 .corner-heart { position: fixed; width: 12vw; z-index: 999; }
 
