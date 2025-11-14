@@ -77,7 +77,13 @@ h2 {
 }
 
 /* --- Content Area Positioning --- */
-#content h1 {
+#title {
+    position: fixed; /* Fixes it relative to the viewport */
+    top: 10px; /* Aligns to the top, leaving a small gap */
+    left: 50%; /* Starts at the middle of the screen */
+    transform: translateX(-50%); /* Shifts it back by half its width to truly center it */
+    z-index: 900; /* Ensures it is above content but below popups */
+    width: auto; /* Width adapts to content */
     text-align: center;
 }
 #content { 
