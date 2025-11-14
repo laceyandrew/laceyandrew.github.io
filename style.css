@@ -1,7 +1,7 @@
 /* --- General Mobile-Friendly Resets & Fluid Typography --- */
 body {
     font-family: sans-serif;
-    background: url("tyler after2.gif") no-repeat center center fixed; 
+    background: url("tyler after 2.gif") no-repeat center center fixed; 
     background-size: contain;
     background-repeat: no-repeat;
     background-color: #B59075;
@@ -79,7 +79,6 @@ h2 {
 #content { 
     padding: 20px; 
     margin: 15px 0 15px 20px; /* Add left margin to stay right of heart */
-    background: white; 
     border-radius: 8px; 
     text-align: left;
     /* Constrain content height to fit between hearts */
