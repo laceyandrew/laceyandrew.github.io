@@ -22,13 +22,19 @@ body {
     position: fixed;
     width: 100%;
     height: 100%;
-    background-color: white;
+    /* Changed background to semi-transparent overlay and added display: none; */
+    background-color: rgba(255, 255, 255, 0.8); 
     top: 0;
     left: 0;
     z-index: 1000;
-    display: flex; /* Use flexbox to center content */
+    display: none; /* Hide the popup by default */
     justify-content: center;
     align-items: center;
+}
+
+/* New class added for JavaScript to use to show the popup */
+.show-popup {
+    display: flex !important; 
 }
 
 #confirm {
@@ -50,17 +56,28 @@ body {
 }
 
 button {
-    padding: 10px 20px;
-    background-color: transparent; 
-    color: red; 
-    border: 10px; 
-    border-color: blue; 
+    padding: 0px 0px 0px;
+    background-color: #04aa6d00;
+    color: red;
+    border: 10px;
+    border-color: blue;
     cursor: pointer;
-    font-size: xx-large; 
-    font-family: cursive; 
-    margin-top: 10px;
+    font-size:x-large;
+    font-weight:bold;
+    font-family: cursive;
+    margin: 10px;
+    text-decoration-line: underline wavy blue;
+    text-decoration:wavy blue;
 }
-
+button:hover {
+    font-weight: bold;
+    color: #ff0011;
+    text-shadow: 2px 2px #00ff13;
+    text-emphasis:"❤️";
+    text-emphasis-style:"❤️";
+    background-color:#ffa8f2;
+    text-decoration: underline wavy #ff0000; 
+}
 
 /* --- H1 Positioning --- */
 /* The main H1 is no longer fixed to the top, it flows with content */
@@ -87,14 +104,14 @@ h2 {
     width: auto; /* Width adapts to content */
     text-align: center;
 }
-#content { 
-    padding: 20px; 
-    margin: 15px 0 15px 20px; /* Add left margin to stay right of heart */
-    border-radius: 8px; 
+#content {
+    padding: 20px;
+    margin: 15px 5px 15px 20px; /* Add left margin to stay right of heart */
+    border-radius: 8px;
     text-align: left;
     /* Constrain content height to fit between hearts */
-    max-height: calc(100vh - 24vw - 40px); 
-    overflow-y: auto; /* Add scroll if content exceeds space */
+    max-height: calc(100vh - 24vw - 40px);
+    overflow: auto;
 }
 ul { 
     list-style-position: inside; 
@@ -112,9 +129,11 @@ li {
 
 /* --- Table Styling --- */
 table { 
-    width: auto; 
-    border-collapse: collapse; 
+    
+    
+    overflow: auto;
     margin-top: 10px; 
+    margin-right: 10px; 
     text-align: left; 
     margin-left: 0;
     margin-right: auto;
@@ -134,36 +153,23 @@ th, td {
 
 /* --- Form and Button Alignment --- */
 form {
-  border: 4px solid #04AA6D; /* Sets a 2px solid green border */
-   padding: 0px 0px; /* Optional: adds padding for better appearance */
-   background-color: #e9ff00; /* Optional: sets background color */
-   text-align: center; 
-   margin-top: 5px;
-   margin-bottom: 5px;
-   font-size:small;
+  border: 5px solid #04AA6D; /* Sets a 2px solid green border */
+  padding: 0px 0px; /* Optional: adds padding for better appearance */
+  background-color: #fff700; /* Optional: sets background color */
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: small;
+
 }
 
-@media (max-width: 768px) {
-    #content {
-        position: fixed; /* Fixes it relative to the viewport */
-        top: 50%;        /* Moves the top edge to the middle */
-        left: 50%;       /* Moves the left edge to the middle */
-        transform: translate(-50%, -50%); /* Shifts it back by half its own width and height to truly center it */
-        width: 50%;      /* Adjust width for mobile view */
-        max-width: none; /* Remove previous max-width constraints if any */
-        height: auto;    /* Height adapts to content */
-        max-height: 90vh; /* Constrain max height to avoid it going off-screen on small devices */
-        margin: 0;       /* Remove existing margins */
-        text-align: center; /* Center the text within the div */
-        z-index: 500;    /* Ensure it's above other content but below popups */
-        overflow-y: auto; /* Add scroll if content exceeds max height */
-    }
+
 
    
     }
 
 img { max-width: 100%; height: auto; margin: 5px 0; }
-.corner-heart { position: fixed; width: 12vw; z-index: 999; }
+.corner-heart { position: fixed; width: 14vw; z-index: 999; padding: 15px;}
 
 /* heart1 at top left of screen (defines top boundary for content) */
 #heart-top-left { top: 10px; left: 10px; }
