@@ -142,16 +142,21 @@ form {
 
 @media (max-width: 768px) {
     #content {
-        position: fixed; /* Fixes position relative to viewport */
-        bottom: 10px; /* Aligns to the bottom */
-        left: 50%; /* Starts at the middle of the screen */
-        transform: translateX(-50%); /* Centers the div */
-        width: 90%; /* Responsive width */
-        max-width: none; /* Remove max-width constraint if necessary */
-        margin: 0; /* Remove previous margins */
-        text-align: center; /* Center content within the div on mobile */
-        /* Adjust height constraints for mobile view if needed */
-        max-height: 40vh; /* Example: limit height to 40% of viewport height */
+        position: fixed; /* Fixes it relative to the viewport */
+        top: 80%;        /* Moves the top edge to the middle */
+        left: 50%;       /* Moves the left edge to the middle */
+        transform: translate(-50%, -50%); /* Shifts it back by half its own width and height to truly center it */
+        width: 70%;      /* Adjust width for mobile view */
+        max-width: none; /* Remove previous max-width constraints if any */
+        height: auto;    /* Height adapts to content */
+        max-height: 90vh; /* Constrain max height to avoid it going off-screen on small devices */
+        margin: 0;       /* Remove existing margins */
+        text-align: center; /* Center the text within the div */
+        z-index: 500;    /* Ensure it's above other content but below popups */
+        overflow-y: auto; /* Add scroll if content exceeds max height */
+    }
+
+   
     }
 
 img { max-width: 100%; height: auto; margin: 5px 0; }
