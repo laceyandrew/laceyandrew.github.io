@@ -133,11 +133,12 @@ th, td {
 
 /* --- Form and Button Alignment --- */
 form {
-   border: 2px solid #04AA6D; /* Sets a 2px solid green border */
-   padding: 10px 20px; /* Optional: adds padding for better appearance */
+  border: 2px solid #04AA6D; /* Sets a 2px solid green border */
+   padding: 0px 0px; /* Optional: adds padding for better appearance */
    background-color: white; /* Optional: sets background color */
-   text-align: left; 
-   margin-top: 10px;
+   text-align: center; 
+   margin-top: 5px;
+   margin-bottom: 5px;
 }
 
 @media (max-width: 768px) {
