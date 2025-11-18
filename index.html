@@ -20,6 +20,7 @@
     <script type="text/javascript">
         function show_popup() {
             document.getElementById('popup').style.display = 'block'; // Ensure popup is visible initially
+            document.body.style.backgroundColor = '#000000';
         }
         window.onload = show_popup;
     </script>
@@ -81,7 +82,8 @@
         
         function hide() {
             var x = document.getElementById("audioID");
-            document.getElementById("popup").style.display = "none"; 
+            document.getElementById("popup").style.display = "none";
+            document.body.style.backgroundImage = "url('tyler after 2.gif')";
             document.getElementById("main-content-wrapper").style.display = "block"; // Show main content
             x.play();
         }
