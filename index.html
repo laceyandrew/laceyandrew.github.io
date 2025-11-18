@@ -15,7 +15,7 @@
     </audio>
     <link rel="stylesheet" href="style.css">
 </head>
-<body style="display: none;">
+<body>
     <div id="cover-wrapper"></div>
     <script type="text/javascript">
         function show_popup() {
@@ -82,7 +82,6 @@
         function hide() {
             var x = document.getElementById("audioID");
             document.getElementById("popup").style.display = "none";
-            document.getElementById("body").style.display = "block";
             document.getElementById("main-content-wrapper").style.display = "block"; // Show main content
             x.play();
         }
