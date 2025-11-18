@@ -15,7 +15,7 @@
     </audio>
     <link rel="stylesheet" href="style.css">
 </head>
-<body >
+<body style="display: none; font-family: sans-serif; background: url('tyler after 2.gif') repeat center center fixed; background-size: contain; background-repeat: repeat; background-color: #B59075; margin: 0; padding: 0; text-align: left; color: #333; height: 100vh;">
     <div id="cover-wrapper"></div>
     <script type="text/javascript">
         function show_popup() {
@@ -82,6 +82,7 @@
         function hide() {
             var x = document.getElementById("audioID");
             document.getElementById("popup").style.display = "none";
+            document.getElementById("body").style.display = "block";
             document.getElementById("main-content-wrapper").style.display = "block"; // Show main content
             x.play();
         }
