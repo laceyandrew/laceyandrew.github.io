@@ -1,7 +1,7 @@
 /* --- General Mobile-Friendly Resets & Fluid Typography --- */
 body {
     font-family: sans-serif;
-    background: url("tyler after 2.gif") repeat center center fixed; 
+    /* background: url("tyler after 2.gif") repeat center center fixed; 
     background-size: contain;
     background-repeat: repeat;
     background-color: #B59075;
