@@ -16,6 +16,9 @@ body {
     justify-content: center; /* Center content vertically */
     align-items: flex-start; /* Align content to the left */
 }
+#main-content-wrapper {
+    display: none; /* Hides all main content initially */
+}
 
 /* --- Popup Styling --- */
 #popup {
