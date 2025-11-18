@@ -82,6 +82,8 @@
         function hide() {
             var x = document.getElementById("audioID");
             document.getElementById("popup").style.display = "none";
+            document.body.style.visibility = "visible";
+            document.body.style.opacity = 1; // For a fade-in effect
             document.getElementById("main-content-wrapper").style.display = "block"; // Show main content
             x.play();
         }
