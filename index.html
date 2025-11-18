@@ -1,26 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Suzette come hoooome</title>
-    <meta name="description" content="A page for Suzette">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    
-    <audio id="audioID" autoplay loop>
-        <source src="Careless Air Horn.mp3" type="audio/mp3">
-        Your browser does not support the audio element.
-    </audio>
-    <link rel="stylesheet" href="style.css">
-</head>
-
 <body>
 
     <script type="text/javascript">
         function show_popup() {
-            document.getElementById('popup');
+            document.getElementById('popup').style.display = 'block'; // Ensure popup is visible initially
         }
         window.onload = show_popup;
     </script>
@@ -32,45 +14,48 @@
         </div>
     </div>
     
-    <div id="title">    
-    <h1>Suzette come home!!</h1>
-    </div>
-    
-    <div id="content">
-        <h2>Reasons to love me agaun</h2>
-        <ul>
-            <li>My muscles</li>
-            <li>My body</li>
-            <li>Im an army man</li>
-            <li>Baby please come home!</li>
-        </ul>
+    <!-- New wrapper for all main content -->
+    <div id="main-content-wrapper">
+        <div id="title">    
+        <h1>Suzette come home!!</h1>
+        </div>
         
-        <table>
-            <thead>
-                <tr>
-                    <th colspan="4">Days Im available to love you:</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Monday</td>
-                    <td>Friday</td>
-                    <td>Easter</td>
-                    <td>the rest of your life</td>
-                </tr>
-            </tbody>
-        </table>
+        <div id="content">
+            <h2>Reasons to love me agaun</h2>
+            <ul>
+                <li>My muscles</li>
+                <li>My body</li>
+                <li>Im an army man</li>
+                <li>Baby please come home!</li>
+            </ul>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="4">Days Im available to love you:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Monday</td>
+                        <td>Friday</td>
+                        <td>Easter</td>
+                        <td>the rest of your life</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <form>
+                <button id="button" type="button" onclick="clicked()">Click to love me again!</button>
+            </form>
+        </div>
         
-        <form>
-            <button id="button" type="button" onclick="clicked()">Click to love me again!</button>
-        </form>
+        <!-- Heart images placed in corners using fixed positioning -->
+        <img id="heart-top-left" class="corner-heart" src="Heart_dancing.gif" alt="Dancing heart">
+        <img id="heart-top-right" class="corner-heart" src="dancing-heart-021407.gif" alt="Dancing heart 2">
+        <img id="heart-bottom-left" class="corner-heart" src="2-jumping-heart.gif" alt="Jumping heart">
+        <img id="heart-bottom-right" class="corner-heart" src="heart.gif" alt="Heart">
     </div>
-    
-    <!-- Heart images placed in corners using fixed positioning -->
-    <img id="heart-top-left" class="corner-heart" src="Heart_dancing.gif" alt="Dancing heart">
-    <img id="heart-top-right" class="corner-heart" src="dancing-heart-021407.gif" alt="Dancing heart 2">
-    <img id="heart-bottom-left" class="corner-heart" src="2-jumping-heart.gif" alt="Jumping heart">
-    <img id="heart-bottom-right" class="corner-heart" src="heart.gif" alt="Heart">
 
     <script>
         function clicked() {
@@ -80,10 +65,9 @@
         function hide() {
             var x = document.getElementById("audioID");
             document.getElementById("popup").style.display = "none"; 
+            document.getElementById("main-content-wrapper").style.display = "block"; // Show main content
             x.play();
         }
     </script>
         
 </body>
-
-</html>
