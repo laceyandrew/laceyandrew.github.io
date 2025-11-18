@@ -1,6 +1,6 @@
 /* --- General Mobile-Friendly Resets & Fluid Typography --- */
 body {
-    visibility: hidden; /* or display: none; */
+    /* or display: none; */
     opacity: 0; /* for a fade-in effect */
     font-family: sans-serif;
     background: url("tyler after 2.gif") repeat center center fixed; 
