@@ -50,6 +50,11 @@ body {
     max-width: 400px; /* Max size for larger screens */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     text-align: center; 
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    margin-top: -40px;
+    margin-left: -50px;
 }
 
 #confirm h1 {
@@ -72,6 +77,11 @@ button {
     margin: 10px;
     text-decoration-line: underline wavy blue;
     text-decoration:wavy blue;
+    box-shadow: 10px 10px 10px;
+    outline-style: dashed;
+    outline-color: olivedrab;
+    background-color: orange;
+    text-shadow: 2px 2px green;
 }
 button:hover {
     font-weight: bold;
