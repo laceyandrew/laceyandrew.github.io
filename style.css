@@ -59,20 +59,25 @@ body {
 }
 
 #confirm {
-    padding: 20px;
-margin: 15px;
+/* General mobile-friendly adjustments */
+padding: 5vw; /* Use viewport units for scaling padding */
+margin: 0 auto; /* Center horizontally if not using absolute position centering */
 border: 1px solid #888;
 border-radius: 10px;
-width: 80%; /* Responsive width */
+
+/* Responsive sizing */
+width: 90%; /* Increase width usage on small screens */
 max-width: 400px; /* Max size for larger screens */
 box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 text-align: center; 
-position: absolute;
-top: 40%;
-left: 40%;
-margin-top: -40px;
-margin-left: -50px;
 background-color: green;
+
+/* Mobile-friendly absolute centering method */
+position: absolute;
+top: 50%; /* Start position at middle of parent */
+left: 50%; /* Start position at middle of parent */
+/* Shift back up and left by 50% of the element's *own* height/width */
+transform: translate(-50%, -50%); 
 
 }
 
