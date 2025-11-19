@@ -174,7 +174,7 @@ form {
     }
 
 img { max-width: 100%; height: auto; margin: 5px 0; }
-.corner-heart { position: fixed; width: 14vw; z-index: 999; padding: 15px;}
+.corner-heart { position: fixed; width: 14vw; z-index: 999; padding: 7px;}
 
 /* heart1 at top left of screen (defines top boundary for content) */
 #heart-top-left { top: 10px; left: 10px; }
