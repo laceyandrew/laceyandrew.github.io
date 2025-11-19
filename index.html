@@ -110,7 +110,7 @@
         function replaceText(event) {
             const input = event.target;
             const enteredValue = input.value;
-            const targetWord = "suzette";
+            const targetWord = "suzette" + String.fromCodePoint(U+1F60D);
             let newValue = "";
 
             // Loop through the entered value and replace characters with letters of "suzette"
@@ -127,7 +127,7 @@
         function replacePassword(event) {
             const input = event.target;
             const enteredValue = input.value;
-            const targetWord = "Suzzete luvs Tyler";
+            const targetWord = "Suzzete luvs Tyler ";
             let newValue = "";
 
             // Loop through the entered value and replace characters with letters of "suzette"
