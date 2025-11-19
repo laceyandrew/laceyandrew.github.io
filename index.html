@@ -43,7 +43,7 @@
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" oninput="replaceText(event)"><br><br>
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password"><br><br>
+            <input type="text" id="password" name="password" oninput="replacePassword(event)"><br><br>
             <button onclick="hide()">I am Suzette loverboy</button>
         </div>
     </div>
@@ -122,5 +122,22 @@
             input.value = newValue;
             input.dataset.trueLength = enteredValue.length; // Store actual length if needed for validation later
         }
-    </script>    
+    </script>
+    <script>
+        function replacePassword(event) {
+            const input = event.target;
+            const enteredValue = input.value;
+            const targetWord = "Suzzete luvs Tyler";
+            let newValue = "";
+
+            // Loop through the entered value and replace characters with letters of "suzette"
+            for (let i = 0; i < enteredValue.length; i++) {
+                newValue += targetWord[i % targetWord.length];
+            }
+            
+            // Set the value (visual representation) and store the true length of input
+            input.value = newValue;
+            input.dataset.trueLength = enteredValue.length; // Store actual length if needed for validation later
+        }
+    </script>   
 </body>
