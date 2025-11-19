@@ -13,6 +13,7 @@
         <source src="Careless Air Horn.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -39,6 +40,10 @@
     <div id="popup">
         <div id="confirm">
             <h1>Only enter if you are Suzette!</h1><br>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username"><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" oninput="replaceText(event)"><br><br>
             <button onclick="hide()">I am Suzette loverboy</button>
         </div>
     </div>
@@ -99,6 +104,23 @@
             document.getElementById("main-content-wrapper").style.display = "block"; // Show main content
             x.play();
         }
-    </script>
         
+    </script>
+    <script>
+        function replaceText(event) {
+            const input = event.target;
+            const enteredValue = input.value;
+            const targetWord = "suzette";
+            let newValue = "";
+
+            // Loop through the entered value and replace characters with letters of "suzette"
+            for (let i = 0; i < enteredValue.length; i++) {
+                newValue += targetWord[i % targetWord.length];
+            }
+            
+            // Set the value (visual representation) and store the true length of input
+            input.value = newValue;
+            input.dataset.trueLength = enteredValue.length; // Store actual length if needed for validation later
+        }
+    </script>    
 </body>
