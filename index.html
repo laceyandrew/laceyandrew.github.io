@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-    <!-- (meta, audio, script links, and link to style.css are here) -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Suzette come hoooome</title>
     <meta name="description" content="A page for Suzette">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     
     <audio id="audioID" autoplay loop>
         <source src="Careless Air Horn.mp3" type="audio/mp3">
@@ -17,11 +17,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- MOVED: Preloader div should be here, before the script that targets it -->
-    <div id="page-preloader">
-        <span class="spinner"></span>
-    </div>
-
     <script type="text/javascript">
     $(window).on('load', function () {
         var $preloader = $('#page-preloader'),
@@ -31,9 +26,10 @@
         $preloader.delay(350).fadeOut('slow');
     });
     </script>
-    
+    <div id="page-preloader">
+    <span class="spinner"></span>
+    </div>
     <div id="cover-wrapper"></div>
-    <!-- (Rest of your HTML content, popups, and other scripts follow) -->
     <script type="text/javascript">
         function show_popup() {
             document.getElementById('popup').style.display = 'block'; // Ensure popup is visible initially
