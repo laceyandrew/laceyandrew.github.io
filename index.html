@@ -41,6 +41,12 @@
         window.onload = show_popup;
     </script>
     
+    <script type="text/javascript">
+        function show_photo() {
+            document.getElementById('photo').style.display = 'block'; // Ensure popup is visible initially
+        }
+    </script>
+    
     <div id="popup">
         <div id="confirm">
             <h1>Only enter if you are Suzette!</h1><br><br>
@@ -85,7 +91,7 @@
             </table>
             
             <form>
-                <button id="button" type="button" onclick="clicked()">Click to love me again!</button>
+                <button id="button" type="button" onclick="show_photo">Click to love me again!</button>
             </form>
         </div>
         
@@ -97,14 +103,12 @@
     </div>
     
     <div id="photo">
+        <h1>Photos of our future</h1>
         <img src="family photo.png">
+        <button onclick="closePhoto">Close</button>
     </div>
     
-    <script>
-        function clicked() {
-            alert("I love you too sugar plum");
-        }
-        
+    <script> 
         function hide() {
             var x = document.getElementById("audioID");
             document.getElementById("popup").style.display = "none";
@@ -148,6 +152,13 @@
             input.value = newValue;
             input.dataset.trueLength = enteredValue.length; // Store actual length if needed for validation later
         }
-    </script>   
+    </script>
+
+    <script>
+        function closePhoto(){
+            document.getElementById("photo").style.display = "none";
+        }
+    </script>
+    
 </body>
 </html>
