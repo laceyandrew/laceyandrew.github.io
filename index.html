@@ -40,13 +40,7 @@
         }
         window.onload = show_popup;
     </script>
-    
-    <script type="text/javascript">
-        function show_photo() {
-            document.getElementById('photo').style.display = 'block'; // Ensure popup is visible initially
-        }
-    </script>
-    
+     
     <div id="popup">
         <div id="confirm">
             <h1>Only enter if you are Suzette!</h1><br><br>
@@ -153,7 +147,11 @@
             input.dataset.trueLength = enteredValue.length; // Store actual length if needed for validation later
         }
     </script>
-
+    <script type="text/javascript">
+        function show_photo() {
+            document.getElementById('photo').style.display = 'block'; // Ensure popup is visible initially
+        }
+    </script>
     <script>
         function closePhoto(){
             document.getElementById("photo").style.display = "none";
