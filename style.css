@@ -155,18 +155,22 @@ h2 {
     padding-bottom:10px;
     transform: translateX(-50%); /* Shifts it back by half its width to truly center it */
     z-index: 900; /* Ensures it is above content but below popups */
-    font-size:3vw;
+    font-size:2.6vw;
     text-align: center;
     white-space:nowrap;
 }
 #content {
+    position:relative;
     padding: 20px;
-    margin: 15px 15px 15px 20px; /* Add left margin to stay right of heart */
+    margin: 15px 15px 20px 20px; /* Add left margin to stay right of heart */
     border-radius: 8px;
     text-align: left;
     /* Constrain content height to fit between hearts */
-    max-height: calc(100vh - 24vw - 40px);
-    z-index: 10;
+     max-height: calc(100vh - 24vw - 40px);
+     max-width: calc(200vh - 24vw - 40px);
+    min-width: calc(5vh - 5vw - 10px);
+     z-index: 10;
+    text-size:1.5vm;
 }
 ul { 
     list-style-position: inside; 
@@ -218,7 +222,9 @@ form {
 
 }
 
-
+#familyPic {
+  max-width: 20%; min-height:20% ; margin: 5px 0;
+}
 
 img { max-width: 20%; min-height:20% ; margin: 5px 0; }
 .corner-heart { position: fixed; width: 14vw; z-index: 999; padding: 7px;}
