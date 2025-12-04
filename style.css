@@ -155,7 +155,7 @@ h2 {
     padding-bottom:10px;
     transform: translateX(-50%); /* Shifts it back by half its width to truly center it */
     z-index: 900; /* Ensures it is above content but below popups */
-    font-size:4vw;
+    font-size:3vw;
     text-align: center;
     white-space:nowrap;
 }
