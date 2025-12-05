@@ -41,7 +41,7 @@ body {
     height: 100vh;
     width: 100vw;
     box-sizing: border-box;
-    padding: 10px; /* General padding to keep things off the edge */
+     /* General padding to keep things off the edge */
 }
 
 /* --- Popup Styling --- */
@@ -88,11 +88,11 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  padding: 20px; /* Added more padding for full screen view */
+   /* Added more padding for full screen view */
   justify-content: center; /* Centers the photo items within the album */
 }
 
-/* --- START OF UNIFORM PHOTO ALBUM FIX --- */
+/* --- START OF UNIFORM PHOTO ALBUM FIX (Revised) --- */
 .photo-item {
   background-color: pink;
   border: 1px solid #ccc;
@@ -102,7 +102,7 @@ body {
   border-radius: 5px;
   
   /* Forces all items to share space equally regardless of image size */
-  flex: 1 1 0 !important; 
+  flex: 1 1 1 !important; 
   
   display: flex;
   flex-direction: column;
@@ -113,8 +113,10 @@ body {
 .photo-item img {
   border: dotted 10px #04aa6d;
   
-  /* Forces image to fill the equalized container width */
+  /* FIX: Use 100% width to fit parent item, and constrain max size */
   width: 100% !important; 
+  max-width: 500px !important; /* Image will shrink on mobile but won't exceed 500px on large screens */
+  
   display: block; 
   
   /* Keeps all images the same shape as the screen scales */
@@ -127,6 +129,7 @@ body {
   margin-bottom: 10px;
 }
 /* --- END OF UNIFORM PHOTO ALBUM FIX --- */
+
 
 
 
@@ -318,7 +321,7 @@ ul {
     text-shadow: 2px 2px plum;
     word-wrap: break-word;
     /* Use 'em' units here to inherit and scale relative to the parent #content font-size */
-    font-size: 0.9em;
+    font-size: 1.2em;
 }
 li {
     color: darkgreen;
@@ -367,18 +370,10 @@ form {
   font-size: small;
 }
 
-#familyPhoto {
-  top:50%; left:50%
-}
 
-img {
-    max-width: 100%;
-    height: auto;
-    margin: 5px 0;
-}
 .corner-heart {
     position: fixed;
-    width: 8vw;
+    width:15vw;
     z-index: 999;
     padding: 10px;
     max-width: 100%;
