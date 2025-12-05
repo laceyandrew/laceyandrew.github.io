@@ -96,11 +96,17 @@
         <img id="heart-bottom-right" class="corner-heart" src="heart.gif" alt="Heart">
     </div>
     
-    <div id="photo" style="display: none;">
-        <h1>Photos of our future</h1><br>
-        <img id="familyPhoto" src="family photo.png"><br>
-        <button onclick="closePhoto()">Close</button>
-    </div>
+<div class="photo-album">
+  <h1>Photos of our future</h1><br>
+  <div class="photo-item">
+    <a href="family photo.png"> <!-- Link to full image, optional -->
+      <img src="family photo.png" alt="Description of photo 1">
+    </a>
+    <div class="caption">Me and our first child, Tyler Jr</div>
+  </div>
+    <button onclick="closePhoto()">Close</button>
+</div>
+
     
     <script> 
         function hide() {
