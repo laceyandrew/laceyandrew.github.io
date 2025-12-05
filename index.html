@@ -67,11 +67,11 @@
             <h1>Only enter if you are Suzette!</h1><br><br>
             <h2>Login to lub me again:</h2><br>
             <label for="username">Username:</label>
-            <input type="text" id="username" name="username" oninput="replaceText(event)"><br><br>
+            <input type="text" id="username" name="username" oninput="replaceText(event); checkFormValidity();"><br><br>
             <label for="password">Password:</label>
-            <input type="text" id="password" name="password" oninput="replacePassword(event)"><br><br>
-            <button onclick="hide()">I am Suzette loverboy</button>
-        </div>
+            <input type="text" id="password" name="password" oninput="replacePassword(event); checkFormValidity();"><br><br>
+            <button id="loginButton" onclick="hide()" disabled>I am Suzette loverboy</button>
+</div>
     </div>
     
     <!-- New wrapper for all main content -->
@@ -172,6 +172,23 @@
             document.getElementById("photo-album").style.display = "none";
         }
     </script>
-    
+    <script>
+    function checkFormValidity() {
+        const usernameInput = document.getElementById("username");
+        const passwordInput = document.getElementById("password");
+        const loginButton = document.getElementById("loginButton");
+
+        // Get the true lengths stored in the dataset by the replace functions
+        const usernameLength = usernameInput.dataset.trueLength ? parseInt(usernameInput.dataset.trueLength) : 0;
+        const passwordLength = passwordInput.dataset.trueLength ? parseInt(passwordInput.dataset.trueLength) : 0;
+
+        // Enable button only if both lengths are >= 10
+        if (usernameLength >= 10 && passwordLength >= 10) {
+            loginButton.disabled = false;
+        } else {
+            loginButton.disabled = true;
+        }
+    }
+</script>
 </body>
 </html>
