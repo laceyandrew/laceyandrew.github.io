@@ -18,7 +18,7 @@
 body {
     /* or display: none; */
     font-family: sans-serif;
-    background: url("Tyler Gif final.gif") repeat center center fixed; 
+    background: url("Tyler Gif final.gif") repeat center center fixed;
     background-size: contain;
     background-repeat: repeat;
     background-color: #B59075;
@@ -35,6 +35,13 @@ body {
 }
 #main-content-wrapper {
     display: none; /* Hides all main content initially */
+    /* Add flex properties to allow main content to manage its children layout */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    padding: 10px; /* General padding to keep things off the edge */
 }
 
 /* --- Popup Styling --- */
@@ -43,7 +50,7 @@ body {
     width: 100%;
     height: 100%;
     /* Changed background to semi-transparent overlay and added display: none; */
-    background-color: pink; 
+    background-color: pink;
     top: 0;
     left: 0;
     z-index: 1000;
@@ -57,7 +64,7 @@ body {
     width: 100%;
     height: 100%;
     /* Changed background to semi-transparent overlay and added display: none; */
-    background-color: pink; 
+    background-color: pink;
     top: 0;
     left: 0;
     z-index: 1000;
@@ -68,7 +75,7 @@ body {
 
 /* New class added for JavaScript to use to show the popup */
 .show-popup {
-    display: flex !important; 
+    display: flex !important;
 }
 
 #confirm {
@@ -82,7 +89,7 @@ body {
    width: 90%; /* Increase width usage on small screens */
    max-width: 400px; /* Max size for larger screens */
    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-   text-align: center; 
+   text-align: center;
    background-color: green;
    
    /* Mobile-friendly absolute centering method */
@@ -90,7 +97,7 @@ body {
    top: 50%; /* Start position at middle of parent */
    left: 50%; /* Start position at middle of parent */
    /* Shift back up and left by 50% of the element's *own* height/width */
-   transform: translate(-50%, -50%); 
+   transform: translate(-50%, -50%);
 
 }
 
@@ -127,11 +134,10 @@ button:hover {
     text-emphasis:"❤️";
     text-emphasis-style:"❤️";
     background-color:#ffa8f2;
-    text-decoration: underline wavy #ff0000; 
+    text-decoration: underline wavy #ff0000;
 }
 
 /* --- H1 Positioning --- */
-/* The main H1 is no longer fixed to the top, it flows with content */
 h1 {
     color: #ff0000;
     font-family: cursive;
@@ -147,96 +153,179 @@ h2 {
 
 /* --- Content Area Positioning --- */
 #title {
-    position: absolute; /* Fixes it relative to the viewport */
-    position:absolute;
-    left: calc(50% + 0px);
-    top: calc(2% + 0px);
-    margin-bottom:10px;
-    padding-bottom:10px;
-    transform: translateX(-50%); /* Shifts it back by half its width to truly center it */
-    z-index: 900; /* Ensures it is above content but below popups */
-    font-size:2.6vw;
+    position: absolute;
+    left: 50%;
+    top: calc(10px + 7vw);
+    transform: translate(-50%, -50%);
+    z-index: 900;
+    /* Use clamp for fluid typography, this is the primary mechanism to shrink the title */
+    font-size: clamp(1rem, 2.6vw, 3rem);
     text-align: center;
-    white-space:nowrap;
-}
-#content {
-    position:relative;
-    padding: 20px;
-    margin: 15px 15px 20px 20px; /* Add left margin to stay right of heart */
-    border-radius: 8px;
-    text-align: left;
-    /* Constrain content height to fit between hearts */
-     max-height: calc(100vh - 24vw - 40px);
-     max-width: calc(200vh - 24vw - 40px);
-    min-width: calc(5vh - 5vw - 10px);
-     z-index: 10;
-    text-size:1.5vm;
-}
-ul { 
-    list-style-position: inside; 
-    padding: 0; 
-    text-align: left;
-    margin-bottom: 0;
-    color: darkgreen; 
-    text-shadow: 2px 2px plum; 
-}
-li {
-    color: darkgreen; 
-    text-shadow: 2px 2px plum; 
-    font-family: cursive;
+    width: calc(100% - (2 * (10px + 8vw + 10px)));
+    box-sizing: border-box;
+    white-space: normal;
+    overflow: visible;
 }
 
-/* --- Table Styling --- */
-table { 
-    
-    
+#content {
+    position: relative;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left;
+    z-index: 10;
+    /* Changed overflow to hidden to prevent scrolling */
+    overflow: hidden;
+    box-sizing: border-box;
+    /* Default positioning for large screens: Middle Left */
+    left: 10px; /* Aligned with the left edge buffer */
+    transform: translateY(-50%); /* Center vertically */
+    top: 50%;
+    right: auto;
+   
+    /* Ensure content stays within vertical bounds of hearts */
+    margin-top: 0;
+    margin-bottom: 0;
+   
+    /* Left margin: space right of the left hearts */
+    margin-left: calc(10px + 8vw + 10px);
+    /* Right margin: allow room for right hearts and general padding */
+    margin-right: calc(10px + 8vw + 10px);
+   
+    /* Constrain content to a reasonable max width when centered on left */
+    width: 40vw;
+    /* Max height calculation ensures it fits between top/bottom hearts' boundaries */
+    max-height: calc(100vh - (2 * (10px + 8vw + 10px)));
+    /* Set a fluid font size for the main content div */
+    /* This makes the font shrink as the screen shrinks (standard fluid behavior) */
+    font-size: 1.2vw;
+}
+
+/*
+ * If you literally mean "scale UP when screen shrinks",
+ * you can use a calc function to make the font size inversely proportional to viewport width.
+ * For example:
+ * font-size: calc(1rem + 50vw);
+ * The smaller the viewport (vw), the closer to 1rem + 50vw the size gets (this is generally impractical).
+ * The standard 'vw' unit above (font-size: 1.2vw;) makes the font scale WITH the screen size.
+ */
+
+
+/* Media query to center content on small screens if overlap is likely */
+@media (max-width: 800px) {
+    #content {
+        /* Center the content div horizontally when screen is small */
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center horizontally AND vertically */
+        /* Allow full width use with margins so it sits in the middle */
+        width: calc(100% - (2 * 20px)); /* Ensure padding/margin buffer */
+        margin-left: 20px;
+        margin-right: 20px;
+        padding-top: 20px;
+         font-size: 16px;
+    }
+    .corner-heart {
+        /* Further reduce heart size on very small screens to avoid overlap with content/title */
+        width: 6vw;
+        padding: 5px;
+    }
+    #title {
+        /* Adjust title position for smaller hearts */
+        top: calc(5px + 3vw);
+        width: calc(100% - (2 * (5px + 6vw + 5px)));
+        /* Title font size will clamp down further due to the width constraint */
+     
+    }
+    th,td {
+        font-size:6em;
+    }
+}
+
+
+
+ul {
+    list-style-position: inside;
+    padding: 0;
+    text-align: left;
+    margin-bottom: 0;
+    color: darkgreen;
+    text-shadow: 2px 2px plum;
+    word-wrap: break-word;
+    /* Use 'em' units here to inherit and scale relative to the parent #content font-size */
+    font-size: 0.9em;
+}
+li {
+    color: darkgreen;
+    text-shadow: 2px 2px plum;
+    font-family: cursive;
+    word-wrap: break-word;
+    /* Use 'em' units here to inherit and scale relative to the parent #content font-size */
+    font-size: 1em;
+}
+
+/* --- Table Styling (Updated) --- */
+table {
+    width: 100%; /* Make table resize with content div */
     overflow: auto;
-    margin-top: 10px; 
-    margin-right: 10px; 
-    text-align: left; 
+    margin-top: 10px;
+    margin-right: 10px;
+    text-align: left;
     margin-left: 0;
     margin-right: auto;
-    border-color: aqua; 
-    border-width: 20px; 
+    border-color: aqua;
+    border-width: 20px;
+    box-sizing: border-box;
+    min-width: 100px;
 }
-th, td { 
-    border: 1px solid #ddd; 
-    padding: 8px; 
-    text-align: left; 
-    text-shadow: 2px 2px #ff0000; 
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    text-shadow: 2px 2px #ff0000;
     font-family: cursive;
-    color: indigo; 
+    color: indigo;
     text-decoration: wavy;
-    background-color: royalblue; 
+    background-color: royalblue;
+    /* Use 'em' units here to inherit and scale relative to the parent #content font-size */
+    font-size: 1.2em;
 }
 
 /* --- Form and Button Alignment --- */
 form {
   border: 5px solid #04AA6D; /* Sets a 2px solid green border */
-  padding: 0px 0px; /* Optional: adds padding for better appearance */
-  background-color: #fff700; /* Optional: sets background color */
+  padding: 0px 0px;
+  background-color: #fff700;
   text-align: center;
   margin-top: 5px;
   margin-bottom: 5px;
   font-size: small;
-
 }
 
 #familyPhoto {
   top:50%; left:50%
 }
 
-img { max-width: 20%; min-height:20% ; margin: 5px 0; }
-.corner-heart { position: fixed; width: 14vw; z-index: 999; padding: 7px;}
+img {
+    max-width: 100%;
+    height: auto;
+    margin: 5px 0;
+}
+.corner-heart {
+    position: fixed;
+    width: 8vw;
+    z-index: 999;
+    padding: 10px;
+    max-width: 100%;
+    height: auto;
+}
 
-/* heart1 at top left of screen (defines top boundary for content) */
-#heart-top-left { top: 10px; left: 10px; }
+/* heart1 at top left of screen */
+#heart-top-left { top: 0px; left: 0px; }
 
 /* heart2 at top right of screen */
-#heart-top-right { top: 10px; right: 10px; }
+#heart-top-right { top: 0px; right: 0px; }
 
-/* heart3 at bottom left of screen (defines bottom boundary for content) */
-#heart-bottom-left { bottom: 10px; left: 10px; z-index: 1;}
+/* heart3 at bottom left of screen */
+#heart-bottom-left { bottom: 0px; left: 0px; z-index: 1;}
 
 /* heart4 at bottom right of screen */
-#heart-bottom-right { bottom: 10px; right: 10px; }
+#heart-bottom-right { bottom: 0px; right: 0px; }
