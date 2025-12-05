@@ -73,6 +73,38 @@ body {
     align-items: center;
 }
 
+.photo-album {
+  display: flex; /* Use flexbox for layout */
+  flex-wrap: wrap; /* Allows items to wrap to the next line */
+  gap: 10px; /* Provides consistent spacing between items */
+  padding: 10px;
+}
+
+.photo-item {
+  background-color:pink;
+  /* Distributes available space among items. Adjust as needed. */
+  flex: 1 1 200px; /* Grow, shrink, and a base width of 200px */
+  border: 1px solid #ccc;
+  padding: 5px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 5px;
+}
+
+.photo-item img {
+  width: 100%; /* Makes images fill their container */
+  height: auto; /* Maintains aspect ratio */
+  display: block; /* Removes default inline spacing issues */
+  object-fit: cover; /* Ensures images cover the area without distortion */
+}
+
+.caption {
+  margin-top: 5px;
+  font-size: 0.9em;
+  color: #555;
+}
+
+
 /* New class added for JavaScript to use to show the popup */
 .show-popup {
     display: flex !important;
