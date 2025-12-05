@@ -74,10 +74,22 @@ body {
 }
 
 .photo-album {
-  display: flex; /* Use flexbox for layout */
-  flex-wrap: wrap; /* Allows items to wrap to the next line */
-  gap: 10px; /* Provides consistent spacing between items */
-  padding: 10px;
+  /* Positioning and Sizing to cover the whole viewport */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100000; /* Ensure it is above all other elements (including preloader) */
+  background-color: pink; /* Gives it a solid background to hide content underneath */
+  overflow-y: auto; /* Allows scrolling if the photos exceed the screen height */
+
+  /* Content layout styles */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px; /* Added more padding for full screen view */
+  justify-content: center; /* Centers the photo items within the album */
 }
 
 .photo-item {
